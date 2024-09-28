@@ -1,0 +1,10 @@
+{
+  "values": {
+    "amberdreams:frostfire_ice": {
+      "burn_time": 800
+    },
+    "amberdreams:starlight_ashes": {
+      "burn_time": 1200
+    }
+  }
+}

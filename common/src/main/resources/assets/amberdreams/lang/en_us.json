@@ -1,0 +1,17 @@
+{
+  "item.amberdreams.bismuth": "Bismuth",
+  "item.amberdreams.raw_bismuth": "Raw Bismuth",
+  "item.amberdreams.chisel": "Chisel",
+  "item.amberdreams.radish": "Radish",
+  "item.amberdreams.frostfire_ice": "Frostfire Ice",
+  "item.amberdreams.starlight_ashes": "Starlight Ashes",
+
+  "block.amberdreams.bismuth_block": "Block of Bismuth",
+  "block.amberdreams.bismuth_ore": "Bismuth Ore",
+  "block.amberdreams.bismuth_deepslate_ore": "Deepslate Bismuth Ore",
+  "block.amberdreams.magic_block": "Magic Block",
+
+  "creativetab.amberdreams.amberdreams_tab": "Amber Dreams",
+
+  "tag.item.amberdreams.transformable_items": "Transformable Items"
+}
