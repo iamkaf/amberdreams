@@ -1,0 +1,13 @@
+// 1.21.1	2024-09-28T17:29:11.6957488	Block States: amberdreams
+41f252961d0ad37ef038969382ae8b93029c6b1a assets/amberdreams/blockstates/bismuth_block.json
+0ec43882d1716b8e8c85047853f76c6c5edc5b9a assets/amberdreams/blockstates/bismuth_deepslate_ore.json
+85b5c83254f4d049840c7115b18bc150baa5e389 assets/amberdreams/blockstates/bismuth_ore.json
+67f5bb7ea016064a28d5c4d365b3ecb63af46b40 assets/amberdreams/blockstates/magic_block.json
+f13aa1060b063388ecaf20a98fbd3229a38d65c1 assets/amberdreams/models/block/bismuth_block.json
+53cb3bc5003dff0831405e2241709f452b9a5777 assets/amberdreams/models/block/bismuth_deepslate_ore.json
+a9619187bc7f6e58122d318e78f20385690d55c8 assets/amberdreams/models/block/bismuth_ore.json
+94dcaa6255a42ec20b5ea607402d10ed6a638132 assets/amberdreams/models/block/magic_block.json
+f2758be45ecb7ee1e0c7e105e931d75182e453c5 assets/amberdreams/models/item/bismuth_block.json
+06de510f221d172de565398a554f6b231982620a assets/amberdreams/models/item/bismuth_deepslate_ore.json
+ae777485ec65240451be918eaa136c55ae24f954 assets/amberdreams/models/item/bismuth_ore.json
+92dc93d997170c380fc850d000458efa38359b14 assets/amberdreams/models/item/magic_block.json

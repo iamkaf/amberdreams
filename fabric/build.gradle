@@ -5,6 +5,14 @@ plugins {
 architectury {
     platformSetupLoomIde()
     fabric()
+
+//    def generatedResources = file('../common/src/main/generated')
+//
+//    sourceSets {
+//        main {
+//            resources.srcDirs += generatedResources
+//        }
+//    }
 }
 
 configurations {

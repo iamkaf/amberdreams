@@ -1,8 +1,8 @@
 {
-  "replace": false,
   "values": [
     "amberdreams:bismuth_block",
     "amberdreams:bismuth_ore",
-    "amberdreams:bismuth_deepslate_ore"
+    "amberdreams:bismuth_deepslate_ore",
+    "amberdreams:magic_block"
   ]
 }

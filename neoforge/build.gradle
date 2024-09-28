@@ -5,6 +5,22 @@ plugins {
 architectury {
     platformSetupLoomIde()
     neoForge()
+
+
+}
+
+def generatedResources = file('../common/src/main/generated')
+def existingResources = file('../common/src/main/resources')
+
+loom {
+    runs {
+        data {
+            data()
+            programArgs "--all", "--mod", "amberdreams"
+            programArgs "--output", "${generatedResources}"
+            programArgs "--existing", "${existingResources}"
+        }
+    }
 }
 
 configurations {

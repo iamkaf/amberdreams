@@ -64,7 +64,7 @@ public final class AmberDreams {
         public static final Supplier<Block> BISMUTH_ORE = Register.block("bismuth_ore", () -> new DropExperienceBlock(UniformInt.of(2, 4), BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.IRON_ORE)));
         public static final Supplier<Block> BISMUTH_DEEPSLATE_ORE = Register.block("bismuth_deepslate_ore", () -> new DropExperienceBlock(UniformInt.of(2, 4), BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.DEEPSLATE_IRON_ORE)));
 
-        public static final Supplier<Block> MAGIC_BLOCK = Register.block("magic_block", () -> new MagicBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.SLIME_BLOCK).sound(SoundType.FUNGUS)));
+        public static final Supplier<Block> MAGIC_BLOCK = Register.block("magic_block", () -> new MagicBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.SLIME_BLOCK).sound(SoundType.FUNGUS).noLootTable()));
 
 
         static void init() {
