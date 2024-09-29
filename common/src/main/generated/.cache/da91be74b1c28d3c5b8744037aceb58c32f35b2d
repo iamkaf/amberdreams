@@ -1,4 +1,7 @@
-// 1.21.1	2024-09-28T17:53:58.0818631	Tags for minecraft:block mod id amberdreams
+// 1.21.1	2024-09-29T12:01:11.1169499	Tags for minecraft:block mod id amberdreams
+63102aa1ad6416de7afc056784288948d8bd17d1 data/minecraft/tags/block/fences.json
+c68fbcf7547f730b45b5ead98c66f03a94b1b76a data/minecraft/tags/block/fence_gates.json
 9b0edd30060c7c322150f972b9968deed6c22466 data/minecraft/tags/block/mineable/pickaxe.json
 4a5bd20f1ee301b9aec747868ab98c5da7d43378 data/minecraft/tags/block/needs_diamond_tool.json
 da9a507f9d69ccc92241df82e4cc06cd5454fa20 data/minecraft/tags/block/needs_iron_tool.json
+28d1cbd4101738cb8693fc130144cc7fb3d7813c data/minecraft/tags/block/walls.json

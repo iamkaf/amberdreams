@@ -28,6 +28,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(AmberDreams.Blocks.BISMUTH_BLOCK.get());
         // dropSelf(ModBlocks.MAGIC_BLOCK.get());
+        dropSelf(AmberDreams.Blocks.BISMUTH_STAIRS.get());
+        add(AmberDreams.Blocks.BISMUTH_SLAB.get(), block -> createSlabItemTable(AmberDreams.Blocks.BISMUTH_SLAB.get()));
+        dropSelf(AmberDreams.Blocks.BISMUTH_PRESSURE_PLATE.get());
+        dropSelf(AmberDreams.Blocks.BISMUTH_BUTTON.get());
+        dropSelf(AmberDreams.Blocks.BISMUTH_FENCE.get());
+        dropSelf(AmberDreams.Blocks.BISMUTH_FENCE_GATE.get());
+        dropSelf(AmberDreams.Blocks.BISMUTH_WALL.get());
+        dropSelf(AmberDreams.Blocks.BISMUTH_TRAPDOOR.get());
+        add(AmberDreams.Blocks.BISMUTH_DOOR.get(), block -> createDoorTable(AmberDreams.Blocks.BISMUTH_DOOR.get()));
 
         add(AmberDreams.Blocks.BISMUTH_ORE.get(), block -> createOreDrop(AmberDreams.Blocks.BISMUTH_ORE.get(), AmberDreams.Items.RAW_BISMUTH.get()));
         add(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get(), block -> createMultipleOreDrops(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get(), AmberDreams.Items.RAW_BISMUTH.get(), 2, 5));
@@ -36,7 +45,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return this.createSilkTouchDispatchTable(pBlock, this.applyExplosionDecay(pBlock, LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
+        return this.createSilkTouchDispatchTable(pBlock, this.applyExplosionDecay(pBlock, LootItem.lootTableItem(item)
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
+                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 
     @Override

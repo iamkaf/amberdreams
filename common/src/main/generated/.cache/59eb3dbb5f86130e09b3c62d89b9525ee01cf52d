@@ -1,4 +1,13 @@
-// 1.21.1	2024-09-28T17:29:11.6972607	Loot Tables
+// 1.21.1	2024-09-29T12:01:11.1149509	Loot Tables
 8533e9b2c310672dd9607dd3d7584d9888e7677a data/amberdreams/loot_table/blocks/bismuth_block.json
+16156a825c7ae9ce126168a4e36e268d0e64e23d data/amberdreams/loot_table/blocks/bismuth_button.json
 259e3a18687411888f07a9a347e7a166a40097a5 data/amberdreams/loot_table/blocks/bismuth_deepslate_ore.json
+25b7c01436040050b8b58ee3369e85daee8f8773 data/amberdreams/loot_table/blocks/bismuth_door.json
+4fac035ab1fe41dece933848a6e71f98d98e9578 data/amberdreams/loot_table/blocks/bismuth_fence.json
+7f0aac72a8ac78b8285b1348bc3e5e095cb5c6db data/amberdreams/loot_table/blocks/bismuth_fence_gate.json
 1371633ad33b04fb1df0845729e317737ee7fc59 data/amberdreams/loot_table/blocks/bismuth_ore.json
+51cc38239520c04378998fc282afa88ec9a0bc73 data/amberdreams/loot_table/blocks/bismuth_pressure_plate.json
+dc1928cd183a1feae71e85b114c7778be9e9c59e data/amberdreams/loot_table/blocks/bismuth_slab.json
+86109f2a14498cfb3e47fa0f9e5017e44d77f66a data/amberdreams/loot_table/blocks/bismuth_stairs.json
+de116b945a1dd5f3abf63d8fcde3120e57cb926d data/amberdreams/loot_table/blocks/bismuth_trapdoor.json
+5c21f95437668bbb7356ac41178a713aa4b89064 data/amberdreams/loot_table/blocks/bismuth_wall.json

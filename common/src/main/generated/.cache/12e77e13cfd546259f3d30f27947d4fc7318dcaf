@@ -1,5 +1,9 @@
-// 1.21.1	2024-09-28T17:29:11.6977625	Item Models: amberdreams
+// 1.21.1	2024-09-29T12:01:11.115449	Item Models: amberdreams
 dcf1fe5ac4712023ec18376f99cbd643ba7285e2 assets/amberdreams/models/item/bismuth.json
+495dee47ee9eda32937c09dd85900df8edd06150 assets/amberdreams/models/item/bismuth_button.json
+949675031398e2220b40dc986b1b70c2d1968d80 assets/amberdreams/models/item/bismuth_door.json
+06c314a32fa000e9dc4c4578f3350cf32117ade3 assets/amberdreams/models/item/bismuth_fence.json
+e75f07c548af6cde166ce944fcd52ce6f792990b assets/amberdreams/models/item/bismuth_wall.json
 da2737452c0fbfd553aaa3f599513ca5013704bd assets/amberdreams/models/item/chisel.json
 fa65fa1ea50cf89bfb7149f21fd0027dffea43d8 assets/amberdreams/models/item/frostfire_ice.json
 9a21f257d2f93f0fc7f4643474e5c361139d59b0 assets/amberdreams/models/item/radish.json

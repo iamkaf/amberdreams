@@ -17,10 +17,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AmberDreams.Blocks.BISMUTH_BLOCK.get()).add(AmberDreams.Blocks.BISMUTH_ORE.get()).add(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get()).add(AmberDreams.Blocks.MAGIC_BLOCK.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AmberDreams.Blocks.BISMUTH_BLOCK.get())
+                .add(AmberDreams.Blocks.BISMUTH_ORE.get())
+                .add(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get())
+                .add(AmberDreams.Blocks.MAGIC_BLOCK.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(AmberDreams.Blocks.MAGIC_BLOCK.get());
+
+        tag(BlockTags.FENCES).add(AmberDreams.Blocks.BISMUTH_FENCE.get());
+        tag(BlockTags.FENCE_GATES).add(AmberDreams.Blocks.BISMUTH_FENCE_GATE.get());
+        tag(BlockTags.WALLS).add(AmberDreams.Blocks.BISMUTH_WALL.get());
     }
 }

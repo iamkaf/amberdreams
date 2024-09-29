@@ -32,18 +32,14 @@ public class RegisterImpl {
     }
 
     public static <T extends CreativeModeTab> Supplier<T> creativeModeTab() {
-        var obj = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, AmberDreams.resource("amberdreams_tab"), FabricItemGroup.builder().icon(() -> new ItemStack(AmberDreams.Blocks.BISMUTH_BLOCK.get())).title(Component.translatable("creativetab.amberdreams.amberdreams_tab")).displayItems((itemDisplayParameters, output) -> {
-            output.accept(AmberDreams.Items.BISMUTH.get());
-            output.accept(AmberDreams.Items.RAW_BISMUTH.get());
-            output.accept(AmberDreams.Items.CHISEL.get());
-            output.accept(AmberDreams.Items.RADISH.get());
-            output.accept(AmberDreams.Items.FROSTFIRE_ICE.get());
-            output.accept(AmberDreams.Items.STARLIGHT_ASHES.get());
-            output.accept(AmberDreams.Blocks.BISMUTH_BLOCK.get());
-            output.accept(AmberDreams.Blocks.BISMUTH_ORE.get());
-            output.accept(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get());
-            output.accept(AmberDreams.Blocks.MAGIC_BLOCK.get());
-        }).build());
+        var obj = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, AmberDreams.resource("amberdreams_tab"), FabricItemGroup.builder()
+                .icon(() -> new ItemStack(AmberDreams.Blocks.BISMUTH_BLOCK.get()))
+                .title(Component.translatable("creativetab.amberdreams.amberdreams_tab"))
+                .displayItems((itemDisplayParameters, output) -> {
+                    for (var item : AmberDreams.CreativeModeTabs.getCreativeModeTabItems()) {
+                        output.accept(item);
+                    }
+                }).build());
         return () -> (T) obj;
     }
 }

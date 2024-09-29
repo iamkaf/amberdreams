@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "amberdreams:block/bismuth_block",
+    "side": "amberdreams:block/bismuth_block",
+    "top": "amberdreams:block/bismuth_block"
+  }
+}

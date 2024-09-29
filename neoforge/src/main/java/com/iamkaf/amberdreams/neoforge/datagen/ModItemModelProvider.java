@@ -18,5 +18,26 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(AmberDreams.Items.RADISH.get());
         basicItem(AmberDreams.Items.FROSTFIRE_ICE.get());
         basicItem(AmberDreams.Items.STARLIGHT_ASHES.get());
+
+        buttonItem("bismuth_button", "bismuth_block");
+        fenceItem("bismuth_fence", "bismuth_block");
+        wallItem("bismuth_wall", "bismuth_block");
+
+        basicItem(AmberDreams.Blocks.BISMUTH_DOOR.get().asItem());
+    }
+
+    public void buttonItem(String id, String baseBlockId) {
+        this.withExistingParent(id, mcLoc("block/button_inventory"))
+                .texture("texture", modLoc("block/" + baseBlockId));
+    }
+
+    public void fenceItem(String id, String baseBlockId) {
+        this.withExistingParent(id, mcLoc("block/fence_inventory"))
+                .texture("texture", modLoc("block/" + baseBlockId));
+    }
+
+    public void wallItem(String id, String baseBlockId) {
+        this.withExistingParent(id, mcLoc("block/wall_inventory"))
+                .texture("wall", modLoc("block/" + baseBlockId));
     }
 }

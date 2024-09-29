@@ -52,5 +52,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, "amberdreams:bismuth_from_magic_block");
         oreSmelting(recipeOutput, BISMUTH_SMELTABLES, RecipeCategory.MISC, AmberDreams.Items.BISMUTH.get(), 0.25f, 200, "bismuth");
         oreBlasting(recipeOutput, BISMUTH_SMELTABLES, RecipeCategory.MISC, AmberDreams.Items.BISMUTH.get(), 0.25f, 100, "bismuth");
+
+        stairBuilder(AmberDreams.Blocks.BISMUTH_STAIRS.get(), Ingredient.of(AmberDreams.Items.BISMUTH.get())).unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get()))
+                .save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, AmberDreams.Blocks.BISMUTH_SLAB.get(), AmberDreams.Items.BISMUTH.get());
+
+        buttonBuilder(AmberDreams.Blocks.BISMUTH_BUTTON.get(), Ingredient.of(AmberDreams.Items.BISMUTH.get())).group("bismuth")
+                .unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get())).save(recipeOutput);
+        pressurePlate(recipeOutput, AmberDreams.Blocks.BISMUTH_PRESSURE_PLATE.get(), AmberDreams.Items.BISMUTH.get());
+
+        fenceBuilder(AmberDreams.Blocks.BISMUTH_FENCE.get(), Ingredient.of(AmberDreams.Items.BISMUTH.get())).group("bismuth")
+                .unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get())).save(recipeOutput);
+        fenceGateBuilder(AmberDreams.Blocks.BISMUTH_FENCE_GATE.get(), Ingredient.of(AmberDreams.Items.BISMUTH.get())).group("bismuth")
+                .unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get())).save(recipeOutput);
+        wall(recipeOutput, RecipeCategory.BUILDING_BLOCKS, AmberDreams.Blocks.BISMUTH_WALL.get(), AmberDreams.Items.BISMUTH.get());
+
+        doorBuilder(AmberDreams.Blocks.BISMUTH_DOOR.get(), Ingredient.of(AmberDreams.Items.BISMUTH.get())).group("bismuth")
+                .unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get())).save(recipeOutput);
+        trapdoorBuilder(AmberDreams.Blocks.BISMUTH_TRAPDOOR.get(), Ingredient.of(AmberDreams.Items.BISMUTH.get())).group("bismuth")
+                .unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get())).save(recipeOutput);
     }
 }

@@ -8,12 +8,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import org.slf4j.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 public final class AmberDreams {
@@ -38,6 +41,33 @@ public final class AmberDreams {
 
     public static class CreativeModeTabs {
         public static final Supplier<CreativeModeTab> CREATIVE_MODE_TAB = Register.creativeModeTab();
+
+        public static List<ItemLike> getCreativeModeTabItems() {
+            List<ItemLike> tabItems = new ArrayList<>();
+
+            tabItems.add(Items.BISMUTH.get());
+            tabItems.add(Items.RAW_BISMUTH.get());
+            tabItems.add(Items.CHISEL.get());
+            tabItems.add(Items.RADISH.get());
+            tabItems.add(Items.FROSTFIRE_ICE.get());
+            tabItems.add(Items.STARLIGHT_ASHES.get());
+
+            tabItems.add(Blocks.BISMUTH_BLOCK.get());
+            tabItems.add(Blocks.BISMUTH_ORE.get());
+            tabItems.add(Blocks.BISMUTH_DEEPSLATE_ORE.get());
+            tabItems.add(Blocks.MAGIC_BLOCK.get());
+            tabItems.add(Blocks.BISMUTH_STAIRS.get());
+            tabItems.add(Blocks.BISMUTH_SLAB.get());
+            tabItems.add(Blocks.BISMUTH_PRESSURE_PLATE.get());
+            tabItems.add(Blocks.BISMUTH_BUTTON.get());
+            tabItems.add(Blocks.BISMUTH_FENCE.get());
+            tabItems.add(Blocks.BISMUTH_FENCE_GATE.get());
+            tabItems.add(Blocks.BISMUTH_WALL.get());
+            tabItems.add(Blocks.BISMUTH_DOOR.get());
+            tabItems.add(Blocks.BISMUTH_TRAPDOOR.get());
+
+            return tabItems;
+        }
 
         static void init() {
         }
@@ -64,8 +94,31 @@ public final class AmberDreams {
         public static final Supplier<Block> BISMUTH_ORE = Register.block("bismuth_ore", () -> new DropExperienceBlock(UniformInt.of(2, 4), BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.IRON_ORE)));
         public static final Supplier<Block> BISMUTH_DEEPSLATE_ORE = Register.block("bismuth_deepslate_ore", () -> new DropExperienceBlock(UniformInt.of(2, 4), BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.DEEPSLATE_IRON_ORE)));
 
-        public static final Supplier<Block> MAGIC_BLOCK = Register.block("magic_block", () -> new MagicBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.SLIME_BLOCK).sound(SoundType.FUNGUS).noLootTable()));
+        public static final Supplier<Block> MAGIC_BLOCK = Register.block("magic_block", () -> new MagicBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.SLIME_BLOCK)
+                .sound(SoundType.FUNGUS).noLootTable()));
 
+        public static final Supplier<StairBlock> BISMUTH_STAIRS = Register.block("bismuth_stairs", () -> new StairBlock(BISMUTH_BLOCK.get()
+                .defaultBlockState(), BlockBehaviour.Properties.of().strength(2f)
+                .requiresCorrectToolForDrops()));
+        public static final Supplier<SlabBlock> BISMUTH_SLAB = Register.block("bismuth_slab", () -> new SlabBlock(BlockBehaviour.Properties.of()
+                .strength(2f).requiresCorrectToolForDrops()));
+
+        public static final Supplier<PressurePlateBlock> BISMUTH_PRESSURE_PLATE = Register.block("bismuth_pressure_plate", () -> new PressurePlateBlock(BlockSetType.IRON, BlockBehaviour.Properties.of()
+                .strength(2f).requiresCorrectToolForDrops()));
+        public static final Supplier<ButtonBlock> BISMUTH_BUTTON = Register.block("bismuth_button", () -> new ButtonBlock(BlockSetType.IRON, 20, BlockBehaviour.Properties.of()
+                .strength(2f).requiresCorrectToolForDrops().noCollission()));
+
+        public static final Supplier<FenceBlock> BISMUTH_FENCE = Register.block("bismuth_fence", () -> new FenceBlock(BlockBehaviour.Properties.of()
+                .strength(2f).requiresCorrectToolForDrops()));
+        public static final Supplier<FenceGateBlock> BISMUTH_FENCE_GATE = Register.block("bismuth_fence_gate", () -> new FenceGateBlock(WoodType.ACACIA, BlockBehaviour.Properties.of()
+                .strength(2f).requiresCorrectToolForDrops()));
+        public static final Supplier<WallBlock> BISMUTH_WALL = Register.block("bismuth_wall", () -> new WallBlock(BlockBehaviour.Properties.of()
+                .strength(2f).requiresCorrectToolForDrops()));
+
+        public static final Supplier<DoorBlock> BISMUTH_DOOR = Register.block("bismuth_door", () -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of()
+                .strength(2f).requiresCorrectToolForDrops().noOcclusion()));
+        public static final Supplier<TrapDoorBlock> BISMUTH_TRAPDOOR = Register.block("bismuth_trapdoor", () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of()
+                .strength(2f).requiresCorrectToolForDrops().noOcclusion()));
 
         static void init() {
         }
