@@ -4,6 +4,7 @@ import com.iamkaf.amberdreams.AmberDreams;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class RegisterImpl {
 
@@ -31,7 +33,7 @@ public class RegisterImpl {
         FuelRegistry.INSTANCE.add(supplier.get(), burnTime);
     }
 
-    public static <T extends CreativeModeTab> Supplier<T> creativeModeTab() {
+    public static Supplier<CreativeModeTab> creativeModeTab() {
         var obj = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, AmberDreams.resource("amberdreams_tab"), FabricItemGroup.builder()
                 .icon(() -> new ItemStack(AmberDreams.Blocks.BISMUTH_BLOCK.get()))
                 .title(Component.translatable("creativetab.amberdreams.amberdreams_tab"))
@@ -40,6 +42,14 @@ public class RegisterImpl {
                         output.accept(item);
                     }
                 }).build());
-        return () -> (T) obj;
+        return () -> obj;
+    }
+
+    public static <T> Supplier<DataComponentType<T>> dataComponentType(String name,
+                                                              UnaryOperator<DataComponentType.Builder<T>> builderOperator) {
+        var obj = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE,
+                AmberDreams.resource(name), builderOperator.apply(DataComponentType.builder())
+                .build());
+        return () -> obj;
     }
 }

@@ -1,12 +1,13 @@
 package com.iamkaf.amberdreams;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class Register {
     @ExpectPlatform
@@ -20,12 +21,18 @@ public class Register {
     }
 
     @ExpectPlatform
-    public static <T extends CreativeModeTab> Supplier<T> creativeModeTab() {
+    public static Supplier<CreativeModeTab> creativeModeTab() {
         throw new AssertionError();
     }
 
     @ExpectPlatform
     public static <T extends Item> void fuelItem(Supplier<T> supplier, int burnTime) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static <T> Supplier<DataComponentType<T>> dataComponentType(String name,
+                                                              UnaryOperator<DataComponentType.Builder<T>> builderUnaryOperator) {
         throw new AssertionError();
     }
 }

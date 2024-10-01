@@ -1,14 +1,18 @@
 package com.iamkaf.amberdreams.item;
 
 import com.iamkaf.amberdreams.AmberDreams;
+import com.iamkaf.amberdreams.DataComponents;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -34,11 +38,14 @@ public class ChiselItem extends Item {
 
         if (CHISEL_MAP.containsKey(clickedBlock)) {
             if (!level.isClientSide()) {
-                level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
+                level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP.get(clickedBlock)
+                        .defaultBlockState());
 
-                context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), (ServerPlayer) context.getPlayer(), item -> {
-                    context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND);
-                });
+                context.getItemInHand()
+                        .hurtAndBreak(1, ((ServerLevel) level), (ServerPlayer) context.getPlayer(), item -> {
+                            context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND);
+                        });
+                context.getItemInHand().set(DataComponents.COORDINATES.get(), context.getClickedPos());
                 level.playSound(null, context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
             }
         }
@@ -57,6 +64,21 @@ public class ChiselItem extends Item {
                 tooltipComponents.add(block.getName());
             }
         }
+
+        var lastBlockChiseled = stack.get(DataComponents.COORDINATES.get());
+        if (lastBlockChiseled != null) {
+            tooltipComponents.add(Component.literal(String.format("Last block chiseled: x%d y%d z%d", lastBlockChiseled.getX(), lastBlockChiseled.getY(), lastBlockChiseled.getZ())));
+        }
+
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+        if (!level.isClientSide() && player.isShiftKeyDown()) {
+            var item = player.getItemInHand(usedHand);
+            item.set(DataComponents.COORDINATES.get(), null);
+        }
+        return super.use(level, player, usedHand);
     }
 }

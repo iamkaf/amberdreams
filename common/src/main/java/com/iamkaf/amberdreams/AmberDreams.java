@@ -31,6 +31,7 @@ public final class AmberDreams {
         Items.init();
         Blocks.init();
         CreativeModeTabs.init();
+        DataComponents.init();
     }
 
     /**

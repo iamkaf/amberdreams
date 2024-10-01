@@ -9,15 +9,16 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 @Mod(AmberDreams.MOD_ID)
 public final class AmberDreamsNeoForge {
-    public AmberDreamsNeoForge(IEventBus modBus) {
+    public AmberDreamsNeoForge(IEventBus eBussy) {
         // Run our common setup.
         AmberDreams.init();
 
-        RegisterImpl.ITEMS.register(modBus);
-        RegisterImpl.BLOCKS.register(modBus);
-        RegisterImpl.TABS.register(modBus);
+        RegisterImpl.ITEMS.register(eBussy);
+        RegisterImpl.BLOCKS.register(eBussy);
+        RegisterImpl.TABS.register(eBussy);
+        RegisterImpl.DATA_COMPONENT_TYPES.register(eBussy);
 
-        modBus.addListener(this::addCreative);
+        eBussy.addListener(this::addCreative);
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
