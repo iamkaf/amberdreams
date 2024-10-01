@@ -1,4 +1,4 @@
-// 1.21.1	2024-09-29T12:01:11.1159497	Recipes
+// 1.21.1	2024-10-01T11:16:28.853853	Recipes
 fbd14a32affab5bf26325974459d356a83dcb086 data/amberdreams/advancement/recipes/building_blocks/bismuth_slab.json
 c788e2c35dce55e10344f1b885794a18585b95f3 data/amberdreams/advancement/recipes/building_blocks/bismuth_stairs.json
 61163d42da1f32a8ab39ebfda9af2aadc17a5af4 data/amberdreams/advancement/recipes/building_blocks/bismuth_wall.json
@@ -12,6 +12,7 @@ da29efb24450d3d6508e0d5c82407b751446d8ed data/amberdreams/advancement/recipes/mi
 d2a0a7306c220c60e2a35105e6f4664487be5e7e data/amberdreams/advancement/recipes/misc/bismuth_from_smelting_bismuth_deepslate_ore.json
 862f0e90305a5ab8e1cd002f5ed293ffe32de773 data/amberdreams/advancement/recipes/misc/bismuth_from_smelting_bismuth_ore.json
 c67d2ddb544e160daca7cc5e756e62283d7598e6 data/amberdreams/advancement/recipes/misc/bismuth_from_smelting_raw_bismuth.json
+e62e0bd02c018a0fea800130acb30d5d8d24ce59 data/amberdreams/advancement/recipes/misc/bismuth_lamp.json
 a87e95130be25fd721ba883fb2e0d00ba322bfc8 data/amberdreams/advancement/recipes/redstone/bismuth_button.json
 ff3e54308afe3a3e63d5296afceaa16194d45c96 data/amberdreams/advancement/recipes/redstone/bismuth_door.json
 9fa353a2b1c2df6f53a7d62c5e13870bf9f50455 data/amberdreams/advancement/recipes/redstone/bismuth_fence_gate.json
@@ -30,6 +31,7 @@ ea3fe3a198a2ca9fbe2975f07d4cae2da28155d5 data/amberdreams/advancement/recipes/re
 842339cb25e91fafa474928f4bdd812ca0746f2a data/amberdreams/recipe/bismuth_from_smelting_bismuth_deepslate_ore.json
 b2346b915b25c5cf88a9f040878284bbb4f568c2 data/amberdreams/recipe/bismuth_from_smelting_bismuth_ore.json
 d69b7ae75441522758a6c7fb7a9cfb6ef0da044e data/amberdreams/recipe/bismuth_from_smelting_raw_bismuth.json
+41604d5a3fe3a6f39c198f33ad02a83c2008c166 data/amberdreams/recipe/bismuth_lamp.json
 13c31e80c3fc6ecd17fcdfe8ac2d8aa4834ad9b7 data/amberdreams/recipe/bismuth_pressure_plate.json
 d253e2f7c9697bb56244b6f27332319116ed9f11 data/amberdreams/recipe/bismuth_slab.json
 9c50db2d33b96fde6041fa502f0079161ad30504 data/amberdreams/recipe/bismuth_stairs.json

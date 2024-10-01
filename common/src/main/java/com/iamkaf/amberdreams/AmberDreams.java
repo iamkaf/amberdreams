@@ -1,5 +1,6 @@
 package com.iamkaf.amberdreams;
 
+import com.iamkaf.amberdreams.block.BismuthLampBlock;
 import com.iamkaf.amberdreams.block.MagicBlock;
 import com.iamkaf.amberdreams.item.ChiselItem;
 import com.iamkaf.amberdreams.item.RadishItem;
@@ -55,6 +56,7 @@ public final class AmberDreams {
             tabItems.add(Blocks.BISMUTH_BLOCK.get());
             tabItems.add(Blocks.BISMUTH_ORE.get());
             tabItems.add(Blocks.BISMUTH_DEEPSLATE_ORE.get());
+            tabItems.add(Blocks.BISMUTH_LAMP.get());
             tabItems.add(Blocks.MAGIC_BLOCK.get());
             tabItems.add(Blocks.BISMUTH_STAIRS.get());
             tabItems.add(Blocks.BISMUTH_SLAB.get());
@@ -119,6 +121,10 @@ public final class AmberDreams {
                 .strength(2f).requiresCorrectToolForDrops().noOcclusion()));
         public static final Supplier<TrapDoorBlock> BISMUTH_TRAPDOOR = Register.block("bismuth_trapdoor", () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of()
                 .strength(2f).requiresCorrectToolForDrops().noOcclusion()));
+
+        public static final Supplier<BismuthLampBlock> BISMUTH_LAMP = Register.block("bismuth_lamp", () -> new BismuthLampBlock(BlockBehaviour.Properties.of()
+                .strength(2f).requiresCorrectToolForDrops()
+                .lightLevel(BismuthLampBlock::getLightLevel)));
 
         static void init() {
         }

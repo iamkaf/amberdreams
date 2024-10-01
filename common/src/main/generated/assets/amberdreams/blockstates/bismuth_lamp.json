@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "amberdreams:block/bismuth_lamp_off"
+    },
+    "clicked=true": {
+      "model": "amberdreams:block/bismuth_lamp_on"
+    }
+  }
+}

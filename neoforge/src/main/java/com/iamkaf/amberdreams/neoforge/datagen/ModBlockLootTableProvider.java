@@ -37,6 +37,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(AmberDreams.Blocks.BISMUTH_WALL.get());
         dropSelf(AmberDreams.Blocks.BISMUTH_TRAPDOOR.get());
         add(AmberDreams.Blocks.BISMUTH_DOOR.get(), block -> createDoorTable(AmberDreams.Blocks.BISMUTH_DOOR.get()));
+        dropSelf(AmberDreams.Blocks.BISMUTH_LAMP.get());
 
         add(AmberDreams.Blocks.BISMUTH_ORE.get(), block -> createOreDrop(AmberDreams.Blocks.BISMUTH_ORE.get(), AmberDreams.Items.RAW_BISMUTH.get()));
         add(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get(), block -> createMultipleOreDrops(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get(), AmberDreams.Items.RAW_BISMUTH.get(), 2, 5));

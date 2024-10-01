@@ -6,6 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.List;
@@ -70,6 +71,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         doorBuilder(AmberDreams.Blocks.BISMUTH_DOOR.get(), Ingredient.of(AmberDreams.Items.BISMUTH.get())).group("bismuth")
                 .unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get())).save(recipeOutput);
         trapdoorBuilder(AmberDreams.Blocks.BISMUTH_TRAPDOOR.get(), Ingredient.of(AmberDreams.Items.BISMUTH.get())).group("bismuth")
+                .unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AmberDreams.Blocks.BISMUTH_LAMP.get())
+                .pattern(" A ").pattern("ABA").pattern(" A ")
+                .define('A', AmberDreams.Items.BISMUTH.get())
+                .define('B', Blocks.REDSTONE_BLOCK)
                 .unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get())).save(recipeOutput);
     }
 }
