@@ -1,6 +1,7 @@
 package com.iamkaf.amberdreams.neoforge.datagen;
 
 import com.iamkaf.amberdreams.AmberDreams;
+import com.iamkaf.amberdreams.tags.Tags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -29,5 +30,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.FENCES).add(AmberDreams.Blocks.BISMUTH_FENCE.get());
         tag(BlockTags.FENCE_GATES).add(AmberDreams.Blocks.BISMUTH_FENCE_GATE.get());
         tag(BlockTags.WALLS).add(AmberDreams.Blocks.BISMUTH_WALL.get());
+
+        tag(Tags.Blocks.NEEDS_BISMUTH_TOOL).addTag(BlockTags.NEEDS_IRON_TOOL);
+        tag(Tags.Blocks.INCORRECT_FOR_BISMUTH_TOOL).addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .remove(Tags.Blocks.NEEDS_BISMUTH_TOOL);
     }
 }

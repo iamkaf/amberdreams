@@ -4,11 +4,13 @@ import com.iamkaf.amberdreams.block.BismuthLampBlock;
 import com.iamkaf.amberdreams.block.MagicBlock;
 import com.iamkaf.amberdreams.item.ChiselItem;
 import com.iamkaf.amberdreams.item.RadishItem;
+import com.iamkaf.amberdreams.item.TierHelper;
+import com.iamkaf.amberdreams.item.ToolTier;
+import com.iamkaf.amberdreams.tags.Tags;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -32,6 +34,7 @@ public final class AmberDreams {
         Blocks.init();
         CreativeModeTabs.init();
         DataComponents.init();
+        ToolTiers.init();
     }
 
     /**
@@ -69,6 +72,12 @@ public final class AmberDreams {
             tabItems.add(Blocks.BISMUTH_DOOR.get());
             tabItems.add(Blocks.BISMUTH_TRAPDOOR.get());
 
+            tabItems.add(Items.BISMUTH_SWORD.get());
+            tabItems.add(Items.BISMUTH_PICKAXE.get());
+            tabItems.add(Items.BISMUTH_SHOVEL.get());
+            tabItems.add(Items.BISMUTH_AXE.get());
+            tabItems.add(Items.BISMUTH_HOE.get());
+
             return tabItems;
         }
 
@@ -85,6 +94,12 @@ public final class AmberDreams {
         public static final Supplier<Item> RADISH = Register.item("radish", () -> new RadishItem(new Item.Properties().food(RadishItem.FOOD_PROPERTIES)));
         public static final Supplier<Item> FROSTFIRE_ICE = Register.item("frostfire_ice", () -> new Item(new Item.Properties()));
         public static final Supplier<Item> STARLIGHT_ASHES = Register.item("starlight_ashes", () -> new Item(new Item.Properties()));
+
+        public static final Supplier<SwordItem> BISMUTH_SWORD = Register.item("bismuth_sword", () -> new SwordItem(ToolTiers.BISMUTH, new Item.Properties().attributes(SwordItem.createAttributes(ToolTiers.BISMUTH, 5, -2.4f))));
+        public static final Supplier<PickaxeItem> BISMUTH_PICKAXE = Register.item("bismuth_pickaxe", () -> new PickaxeItem(ToolTiers.BISMUTH, new Item.Properties().attributes(PickaxeItem.createAttributes(ToolTiers.BISMUTH, 1.0F, -2.8f))));
+        public static final Supplier<ShovelItem> BISMUTH_SHOVEL = Register.item("bismuth_shovel", () -> new ShovelItem(ToolTiers.BISMUTH, new Item.Properties().attributes(ShovelItem.createAttributes(ToolTiers.BISMUTH, 1.5F, -3.0f))));
+        public static final Supplier<AxeItem> BISMUTH_AXE = Register.item("bismuth_axe", () -> new AxeItem(ToolTiers.BISMUTH, new Item.Properties().attributes(AxeItem.createAttributes(ToolTiers.BISMUTH, 6.0F, -3.2f))));
+        public static final Supplier<HoeItem> BISMUTH_HOE = Register.item("bismuth_hoe", () -> new HoeItem(ToolTiers.BISMUTH, new Item.Properties().attributes(HoeItem.createAttributes(ToolTiers.BISMUTH, 0F, -3.0f))));
 
         static void init() {
             Register.fuelItem(FROSTFIRE_ICE, 800);
@@ -126,6 +141,13 @@ public final class AmberDreams {
         public static final Supplier<BismuthLampBlock> BISMUTH_LAMP = Register.block("bismuth_lamp", () -> new BismuthLampBlock(BlockBehaviour.Properties.of()
                 .strength(2f).requiresCorrectToolForDrops()
                 .lightLevel(BismuthLampBlock::getLightLevel)));
+
+        static void init() {
+        }
+    }
+
+    public static class ToolTiers {
+        public static final ToolTier BISMUTH = new ToolTier(Tags.Blocks.INCORRECT_FOR_BISMUTH_TOOL, 1400, 4f, 3f, 28, TierHelper.repair(Items.BISMUTH));
 
         static void init() {
         }

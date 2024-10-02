@@ -4,11 +4,9 @@ import com.iamkaf.amberdreams.AmberDreams;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.SimpleTier;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;

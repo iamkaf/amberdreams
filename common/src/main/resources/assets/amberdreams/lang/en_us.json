@@ -6,6 +6,12 @@
   "item.amberdreams.frostfire_ice": "Frostfire Ice",
   "item.amberdreams.starlight_ashes": "Starlight Ashes",
 
+  "item.amberdreams.bismuth_sword": "Bismuth Sword",
+  "item.amberdreams.bismuth_pickaxe": "Bismuth Pickaxe",
+  "item.amberdreams.bismuth_shovel": "Bismuth Shovel",
+  "item.amberdreams.bismuth_axe": "Bismuth Axe",
+  "item.amberdreams.bismuth_hoe": "Bismuth Hoe",
+
   "block.amberdreams.bismuth_block": "Block of Bismuth",
   "block.amberdreams.bismuth_ore": "Bismuth Ore",
   "block.amberdreams.bismuth_deepslate_ore": "Deepslate Bismuth Ore",
@@ -28,5 +34,7 @@
 
   "creativetab.amberdreams.amberdreams_tab": "Amber Dreams",
 
-  "tag.item.amberdreams.transformable_items": "Transformable Items"
+  "tag.item.amberdreams.transformable_items": "Transformable Items",
+  "tag.block.amberdreams.needs_bismuth_tool": "Needs Bismuth Tool",
+  "tag.block.amberdreams.incorrect_for_bismuth_tool": "Incorrect For Bismuth Tool"
 }

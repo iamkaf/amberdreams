@@ -1,8 +1,13 @@
-// 1.21.1	2024-09-29T12:01:11.115449	Item Models: amberdreams
+// 1.21.1	2024-10-01T20:51:06.6486795	Item Models: amberdreams
 dcf1fe5ac4712023ec18376f99cbd643ba7285e2 assets/amberdreams/models/item/bismuth.json
+403dca3b3ce70e2f1681e1d9cbb1d98cc179a00b assets/amberdreams/models/item/bismuth_axe.json
 495dee47ee9eda32937c09dd85900df8edd06150 assets/amberdreams/models/item/bismuth_button.json
 949675031398e2220b40dc986b1b70c2d1968d80 assets/amberdreams/models/item/bismuth_door.json
 06c314a32fa000e9dc4c4578f3350cf32117ade3 assets/amberdreams/models/item/bismuth_fence.json
+345a4a318208445a26b2e9a17657bef8d86c7e2c assets/amberdreams/models/item/bismuth_hoe.json
+a61b3e9e8d6123b8f34b4ef2f66e4a7cdaf1fc7f assets/amberdreams/models/item/bismuth_pickaxe.json
+1447d7fea5cba6d4595d53e2a2811e0739ccbda4 assets/amberdreams/models/item/bismuth_shovel.json
+ca2b7e4becca797c12963c487afcc8294c4acea6 assets/amberdreams/models/item/bismuth_sword.json
 e75f07c548af6cde166ce944fcd52ce6f792990b assets/amberdreams/models/item/bismuth_wall.json
 da2737452c0fbfd553aaa3f599513ca5013704bd assets/amberdreams/models/item/chisel.json
 fa65fa1ea50cf89bfb7149f21fd0027dffea43d8 assets/amberdreams/models/item/frostfire_ice.json
