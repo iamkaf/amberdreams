@@ -11,6 +11,12 @@
   "item.amberdreams.bismuth_shovel": "Bismuth Shovel",
   "item.amberdreams.bismuth_axe": "Bismuth Axe",
   "item.amberdreams.bismuth_hoe": "Bismuth Hoe",
+  "item.amberdreams.bismuth_hammer": "Bismuth Hammer",
+
+  "item.amberdreams.bismuth_helmet": "Bismuth Helmet",
+  "item.amberdreams.bismuth_chestplate": "Bismuth Chestplate",
+  "item.amberdreams.bismuth_leggings": "Bismuth Leggings",
+  "item.amberdreams.bismuth_boots": "Bismuth Boots",
 
   "block.amberdreams.bismuth_block": "Block of Bismuth",
   "block.amberdreams.bismuth_ore": "Bismuth Ore",
@@ -36,5 +42,7 @@
 
   "tag.item.amberdreams.transformable_items": "Transformable Items",
   "tag.block.amberdreams.needs_bismuth_tool": "Needs Bismuth Tool",
-  "tag.block.amberdreams.incorrect_for_bismuth_tool": "Incorrect For Bismuth Tool"
+  "tag.block.amberdreams.incorrect_for_bismuth_tool": "Incorrect For Bismuth Tool",
+  "tag.item.c.bismuths": "Bismuths",
+  "tag.item.c.hammers": "Hammers"
 }

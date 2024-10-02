@@ -32,6 +32,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem("bismuth_shovel");
         handheldItem("bismuth_axe");
         handheldItem("bismuth_hoe");
+        handheldItem("bismuth_hammer");
+
+        basicItem(AmberDreams.Items.BISMUTH_HELMET.get());
+        basicItem(AmberDreams.Items.BISMUTH_CHESTPLATE.get());
+        basicItem(AmberDreams.Items.BISMUTH_LEGGINGS.get());
+        basicItem(AmberDreams.Items.BISMUTH_BOOTS.get());
     }
 
     public void buttonItem(String id, String baseBlockId) {

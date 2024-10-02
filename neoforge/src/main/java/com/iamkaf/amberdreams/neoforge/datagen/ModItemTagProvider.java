@@ -28,8 +28,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.SWORDS).add(AmberDreams.Items.BISMUTH_SWORD.get());
         tag(ItemTags.PICKAXES).add(AmberDreams.Items.BISMUTH_PICKAXE.get());
+        tag(ItemTags.PICKAXES).add(AmberDreams.Items.BISMUTH_HAMMER.get());
+        tag(Tags.Items.PICKAXES).add(AmberDreams.Items.BISMUTH_HAMMER.get());
         tag(ItemTags.SHOVELS).add(AmberDreams.Items.BISMUTH_SHOVEL.get());
         tag(ItemTags.AXES).add(AmberDreams.Items.BISMUTH_AXE.get());
         tag(ItemTags.HOES).add(AmberDreams.Items.BISMUTH_HOE.get());
+
+        tag(ItemTags.HEAD_ARMOR).add(AmberDreams.Items.BISMUTH_HELMET.get());
+        tag(ItemTags.CHEST_ARMOR).add(AmberDreams.Items.BISMUTH_CHESTPLATE.get());
+        tag(ItemTags.LEG_ARMOR).add(AmberDreams.Items.BISMUTH_LEGGINGS.get());
+        tag(ItemTags.FOOT_ARMOR).add(AmberDreams.Items.BISMUTH_BOOTS.get());
     }
 }

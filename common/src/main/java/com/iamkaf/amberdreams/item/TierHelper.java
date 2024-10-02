@@ -2,29 +2,57 @@ package com.iamkaf.amberdreams.item;
 
 
 import com.iamkaf.amberdreams.AmberDreams;
-import net.minecraft.tags.TagKey;
+import net.minecraft.Util;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class TierHelper {
+    public static Map<ArmorItem.Type, Integer> defense(int boots, int leggings, int chestplate, int helmet, int body) {
+        return Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+            map.put(ArmorItem.Type.BOOTS, boots);
+            map.put(ArmorItem.Type.LEGGINGS, leggings);
+            map.put(ArmorItem.Type.CHESTPLATE, chestplate);
+            map.put(ArmorItem.Type.HELMET, helmet);
+            map.put(ArmorItem.Type.BODY, body);
+        });
+    }
+
     public static List<ArmorMaterial.Layer> genericLayers(String name) {
-        return List.of(
-                // Creates a new armor texture that will be located at:
-                // - 'assets/amberdreams/textures/models/armor/name_layer_1.png' for the outer texture
-                // - 'assets/amberdreams/textures/models/armor/name_layer_2.png' for the inner texture (only legs)
-                new ArmorMaterial.Layer(AmberDreams.resource(name)),
-                // Creates a new armor texture that will be rendered on top of the previous at:
-                // - 'assets/amberdreams/textures/models/armor/name_layer_1_overlay.png' for the outer texture
-                // - 'assets/amberdreams/textures/models/armor/name_layer_2_overlay.png' for the inner texture (only legs)
-                // 'true' means that the armor material is dyeable; however, the item must also be added to the 'minecraft:dyeable' tag
-                new ArmorMaterial.Layer(AmberDreams.resource(name), "_overlay", true));
+        List<ArmorMaterial.Layer> layers = new ArrayList<>();
+
+        // Creates a new armor texture that will be located at:
+        // - 'assets/amberdreams/textures/models/armor/name_layer_1.png' for the outer texture
+        // - 'assets/amberdreams/textures/models/armor/name_layer_2.png' for the inner texture (only legs)
+        layers.add(new ArmorMaterial.Layer(AmberDreams.resource(name)));
+
+        return layers;
+    }
+
+    public static List<ArmorMaterial.Layer> genericLayers(String name, boolean dyeable) {
+        List<ArmorMaterial.Layer> layers = new ArrayList<>();
+
+        // Creates a new armor texture that will be located at:
+        // - 'assets/amberdreams/textures/models/armor/name_layer_1.png' for the outer texture
+        // - 'assets/amberdreams/textures/models/armor/name_layer_2.png' for the inner texture (only legs)
+        layers.add(new ArmorMaterial.Layer(AmberDreams.resource(name)));
+
+        if (dyeable) {
+            // Creates a new armor texture that will be rendered on top of the previous at:
+            // - 'assets/amberdreams/textures/models/armor/name_layer_1_overlay.png' for the outer texture
+            // - 'assets/amberdreams/textures/models/armor/name_layer_2_overlay.png' for the inner texture (only legs)
+            // 'true' means that the armor material is dyeable; however, the item must also be added to the 'minecraft:dyeable' tag
+            layers.add(new ArmorMaterial.Layer(AmberDreams.resource(name), "_overlay", true));
+        }
+
+        return layers;
     }
 
 
@@ -57,17 +85,17 @@ public class TierHelper {
     }
 
     public enum VanillaKnockbackResistance {
-        TURTLE_SHELL(0.0),
-        LEATHER(0.0),
-        GOLD(0.0),
-        CHAINMAIL(0.0),
-        IRON(0.0),
-        DIAMOND(0.02),
-        NETHERITE(0.1);
+        TURTLE_SHELL(0.0f),
+        LEATHER(0.0f),
+        GOLD(0.0f),
+        CHAINMAIL(0.0f),
+        IRON(0.0f),
+        DIAMOND(0.02f),
+        NETHERITE(0.1f);
 
-        public final double knockbackResistance;
+        public final float knockbackResistance;
 
-        VanillaKnockbackResistance(double knockbackResistance) {
+        VanillaKnockbackResistance(float knockbackResistance) {
             this.knockbackResistance = knockbackResistance;
         }
     }
