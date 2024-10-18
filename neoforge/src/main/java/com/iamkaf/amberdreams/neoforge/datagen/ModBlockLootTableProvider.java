@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -42,6 +43,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(AmberDreams.Blocks.BISMUTH_ORE.get(), block -> createOreDrop(AmberDreams.Blocks.BISMUTH_ORE.get(), AmberDreams.Items.RAW_BISMUTH.get()));
         add(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get(), block -> createMultipleOreDrops(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get(), AmberDreams.Items.RAW_BISMUTH.get(), 2, 5));
 
+        dropSelf(AmberDreams.Blocks.TOOL_BENCH.get());
+        dropSelf(AmberDreams.Blocks.REPAIR_BENCH.get());
+        dropOther(AmberDreams.Blocks.BRITTLEY_BLOCK.get(), Items.SUGAR);
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

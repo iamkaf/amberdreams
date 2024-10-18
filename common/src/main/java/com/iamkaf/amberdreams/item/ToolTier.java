@@ -1,5 +1,7 @@
 package com.iamkaf.amberdreams.item;
 
+import com.iamkaf.amberdreams.AmberDreams;
+import com.iamkaf.amberdreams.tags.Tags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -7,7 +9,15 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 
-public class ToolTier implements Tier {
+public enum ToolTier implements Tier {
+    BISMUTH(
+            Tags.Blocks.INCORRECT_FOR_BISMUTH_TOOL,
+            1400,
+            4f,
+            3f,
+            28,
+            TierHelper.repair(AmberDreams.Items.BISMUTH));
+
     private final TagKey<Block> incorrectBlocksForDrops;
     private final int uses;
     private final float speed;
@@ -15,7 +25,7 @@ public class ToolTier implements Tier {
     private final int enchantmentValue;
     private final Supplier<Ingredient> repairIngredient;
 
-    public ToolTier(TagKey<Block> incorrectBlocksForDrops, int uses, float speed, float attackDamageBonus, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
+    private ToolTier(TagKey<Block> incorrectBlocksForDrops, int uses, float speed, float attackDamageBonus, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
         this.incorrectBlocksForDrops = incorrectBlocksForDrops;
         this.uses = uses;
         this.speed = speed;

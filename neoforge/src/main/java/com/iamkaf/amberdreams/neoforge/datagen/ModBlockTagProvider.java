@@ -21,7 +21,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AmberDreams.Blocks.BISMUTH_BLOCK.get())
                 .add(AmberDreams.Blocks.BISMUTH_ORE.get())
                 .add(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get())
-                .add(AmberDreams.Blocks.MAGIC_BLOCK.get());
+                .add(AmberDreams.Blocks.MAGIC_BLOCK.get())
+                .add(AmberDreams.Blocks.REPAIR_BENCH.get());
+
+        tag(BlockTags.MINEABLE_WITH_AXE).add(AmberDreams.Blocks.TOOL_BENCH.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get());
 

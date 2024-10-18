@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-02T15:14:15.3329457	Tags for minecraft:item mod id amberdreams
+// 1.21.1	2024-10-18T09:23:25.4204808	Tags for minecraft:item mod id amberdreams
 1847f18f25d3efdd1586fdee38bda7c17cdbe933 data/amberdreams/tags/item/transformable_items.json
 13a13e7ffabcfc3185ca04a2e193a326880a8d0a data/minecraft/tags/item/axes.json
 6a88cb2b482f286db40ec28252f17ce85949aff6 data/minecraft/tags/item/chest_armor.json
@@ -6,6 +6,6 @@
 0744b1272635a0fe1a05e2453fdea3aa1065d8d5 data/minecraft/tags/item/head_armor.json
 adf9de4fb6cba61b4052a5887c5b6cc2bb27c21f data/minecraft/tags/item/hoes.json
 81be50c319262ecc55890373911857e710b45e13 data/minecraft/tags/item/leg_armor.json
-863836029637934abb62adba77779a7bc384aaa6 data/minecraft/tags/item/pickaxes.json
+113037fb5e515ec9fba23b3bb39b8cb74a0fbe97 data/minecraft/tags/item/pickaxes.json
 d5fb9c5610da621bd53ba18d8cde45af15762c42 data/minecraft/tags/item/shovels.json
 dd37c0c053f1826f56e223d37e60c8efb1e1fb71 data/minecraft/tags/item/swords.json

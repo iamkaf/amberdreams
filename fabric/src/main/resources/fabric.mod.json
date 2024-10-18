@@ -1,38 +1,37 @@
 {
   "schemaVersion": 1,
-  "id": "amberdreams",
-  "version": "${version}",
-  "name": "Amber Dreams",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
   "authors": [
-    "Me!"
+    "${mod_author}"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "${mod_page_url}",
+    "issues": "${mod_issue_url}",
+    "sources": "${mod_page_url}"
   },
-  "license": "CC0-1.0",
-  "icon": "assets/amberdreams/icon.png",
-  "environment": "*",
+  "license": "${mod_license}",
+  "icon": "assets/${mod_id}/icon.png",
+  "environment": "${mod_fabric_environment}",
   "entrypoints": {
     "main": [
-      "com.iamkaf.amberdreams.fabric.AmberDreamsFabric"
+      "${main_entrypoint}"
     ],
     "client": [
-      "com.iamkaf.amberdreams.fabric.client.AmberDreamsFabricClient"
+      "${client_entrypoint}"
     ]
   },
   "mixins": [
-    "amberdreams.mixins.json"
+    "${mod_id}.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.16.5",
-    "minecraft": "~1.21",
+    "amber": ">=${amber_version}",
+    "fabricloader": ">=${fabric_loader_version}",
+    "minecraft": "~${minecraft_version}",
     "java": ">=21",
-    "architectury": ">=13.0.2",
+    "architectury": ">=${architectury_api_version}",
     "fabric-api": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

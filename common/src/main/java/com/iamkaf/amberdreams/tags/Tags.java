@@ -30,7 +30,6 @@ public class Tags {
         public static final TagKey<Item> CHEST_ARMOR = createItemTag("minecraft", "chest_armor");
         public static final TagKey<Item> LEG_ARMOR = createItemTag("minecraft", "leg_armor");
         public static final TagKey<Item> FOOT_ARMOR = createItemTag("minecraft", "foot_armor");
-        public static final TagKey<Item> PICKAXES = createItemTag("minecraft", "pickaxes");
     }
 
     public static class Blocks {

@@ -7,8 +7,8 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'amberdreams'
-
 include 'common'
 include 'fabric'
 include 'neoforge'
+
+apply from: "https://raw.githubusercontent.com/iamkaf/modresources/main/gradle/${minecraft_version}/settings.gradle"

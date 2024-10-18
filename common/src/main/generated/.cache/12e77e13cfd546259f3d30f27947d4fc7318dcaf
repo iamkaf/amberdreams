@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-02T15:14:15.3309466	Item Models: amberdreams
+// 1.21.1	2024-10-09T22:24:46.6406261	Item Models: amberdreams
 dcf1fe5ac4712023ec18376f99cbd643ba7285e2 assets/amberdreams/models/item/bismuth.json
 403dca3b3ce70e2f1681e1d9cbb1d98cc179a00b assets/amberdreams/models/item/bismuth_axe.json
 7b2aa21714644ec3b24131484e64dd3f9b99aa84 assets/amberdreams/models/item/bismuth_boots.json
@@ -9,6 +9,7 @@ dcf1fe5ac4712023ec18376f99cbd643ba7285e2 assets/amberdreams/models/item/bismuth.
 5d2925cc0c69935e1da02df75f0be0bf7e7a2851 assets/amberdreams/models/item/bismuth_hammer.json
 a1fbcf138aa4e08c00421c9ca3e627a3887764bb assets/amberdreams/models/item/bismuth_helmet.json
 345a4a318208445a26b2e9a17657bef8d86c7e2c assets/amberdreams/models/item/bismuth_hoe.json
+acf1c94e03b490ec3c37db6e8ce2b38eae0dca36 assets/amberdreams/models/item/bismuth_horse_armor.json
 c816cfb33433a49f37c9a3506118721281253948 assets/amberdreams/models/item/bismuth_leggings.json
 a61b3e9e8d6123b8f34b4ef2f66e4a7cdaf1fc7f assets/amberdreams/models/item/bismuth_pickaxe.json
 1447d7fea5cba6d4595d53e2a2811e0739ccbda4 assets/amberdreams/models/item/bismuth_shovel.json

@@ -1,11 +1,11 @@
 package com.iamkaf.amberdreams.neoforge;
 
-import net.minecraft.world.item.CreativeModeTabs;
+import com.iamkaf.amberdreams.AmberDreams;
+import com.iamkaf.amberdreams.tool_upgrades.DurabilityRebalance;
+import net.minecraft.core.component.DataComponents;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
-
-import com.iamkaf.amberdreams.AmberDreams;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
 
 @Mod(AmberDreams.MOD_ID)
 public final class AmberDreamsNeoForge {
@@ -18,16 +18,14 @@ public final class AmberDreamsNeoForge {
         RegisterImpl.TABS.register(eBussy);
         RegisterImpl.DATA_COMPONENT_TYPES.register(eBussy);
 
-        eBussy.addListener(this::addCreative);
+        eBussy.addListener(this::modifyDefaultComponents);
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(AmberDreams.Items.BISMUTH.get());
-            event.accept(AmberDreams.Items.RAW_BISMUTH.get());
-            event.accept(AmberDreams.Blocks.BISMUTH_BLOCK.get());
-            event.accept(AmberDreams.Blocks.BISMUTH_ORE.get());
-            event.accept(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get());
+    private void modifyDefaultComponents(ModifyDefaultComponentsEvent event) {
+        for (var entry : DurabilityRebalance.ITEMS.entrySet()) {
+            event.modify(entry.getKey(), builder -> {
+                builder.set(DataComponents.MAX_DAMAGE, entry.getValue());
+            });
         }
     }
 }

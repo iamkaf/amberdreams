@@ -1,38 +1,43 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
-#issueTrackerURL = ""
-license = "Insert License Here"
+issueTrackerURL = "${mod_issue_url}"
+license = "${mod_license}"
 
 [[mods]]
-modId = "amberdreams"
-version = "${version}"
-displayName = "Amber Dreams"
-authors = "Me!"
-description = '''
-This is an example description! Tell everyone what your mod is about!
-'''
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_author}"
+description = "${mod_description}"
 #logoFile = ""
 
-[[dependencies.amberdreams]]
+[[dependencies.${mod_id}]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.0,)"
+versionRange = "[${min_neoforge_version},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.amberdreams]]
+[[dependencies.${mod_id}]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21,)"
+versionRange = "[${minecraft_version},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.amberdreams]]
+[[dependencies.${mod_id}]]
 modId = "architectury"
 type = "required"
-versionRange = "[13.0.2,)"
+versionRange = "[${architectury_api_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "amber"
+type = "required"
+versionRange = "[${amber_version},)"
 ordering = "AFTER"
 side = "BOTH"
 
 [[mixins]]
-config = "amberdreams.mixins.json"
+config = "${mod_id}.mixins.json"

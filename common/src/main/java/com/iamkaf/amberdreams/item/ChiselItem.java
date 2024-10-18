@@ -1,7 +1,6 @@
 package com.iamkaf.amberdreams.item;
 
 import com.iamkaf.amberdreams.AmberDreams;
-import com.iamkaf.amberdreams.DataComponents;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -45,7 +44,7 @@ public class ChiselItem extends Item {
                         .hurtAndBreak(1, ((ServerLevel) level), (ServerPlayer) context.getPlayer(), item -> {
                             context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND);
                         });
-                context.getItemInHand().set(DataComponents.COORDINATES.get(), context.getClickedPos());
+                context.getItemInHand().set(AmberDreams.DataComponents.COORDINATES.get(), context.getClickedPos());
                 level.playSound(null, context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
             }
         }
@@ -65,7 +64,7 @@ public class ChiselItem extends Item {
             }
         }
 
-        var lastBlockChiseled = stack.get(DataComponents.COORDINATES.get());
+        var lastBlockChiseled = stack.get(AmberDreams.DataComponents.COORDINATES.get());
         if (lastBlockChiseled != null) {
             tooltipComponents.add(Component.literal(String.format("Last block chiseled: x%d y%d z%d", lastBlockChiseled.getX(), lastBlockChiseled.getY(), lastBlockChiseled.getZ())));
         }
@@ -77,7 +76,7 @@ public class ChiselItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         if (!level.isClientSide() && player.isShiftKeyDown()) {
             var item = player.getItemInHand(usedHand);
-            item.set(DataComponents.COORDINATES.get(), null);
+            item.set(AmberDreams.DataComponents.COORDINATES.get(), null);
         }
         return super.use(level, player, usedHand);
     }

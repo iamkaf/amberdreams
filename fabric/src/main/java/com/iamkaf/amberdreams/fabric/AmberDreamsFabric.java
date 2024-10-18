@@ -1,26 +1,35 @@
 package com.iamkaf.amberdreams.fabric;
 
 import com.iamkaf.amberdreams.AmberDreams;
+import com.iamkaf.amberdreams.fabric.event.OnEntityDamageAfter;
+import com.iamkaf.amberdreams.tool_upgrades.DurabilityRebalance;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
+import net.minecraft.core.component.DataComponents;
 
 public final class AmberDreamsFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        // This code runs as soon as Minecraft is in a mod-load-ready state.
+        // Fabric: This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
 
         // Run our common setup.
         AmberDreams.init();
 
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(content -> {
-            content.accept(AmberDreams.Items.BISMUTH.get());
-            content.accept(AmberDreams.Items.RAW_BISMUTH.get());
-            content.accept(AmberDreams.Blocks.BISMUTH_BLOCK.get());
-            content.accept(AmberDreams.Blocks.BISMUTH_ORE.get());
-            content.accept(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get());
+        OnEntityDamageAfter.init();
+
+        modifyDefaultComponents();
+    }
+
+    private void modifyDefaultComponents() {
+        DefaultItemComponentEvents.MODIFY.register((context) -> {
+            for (var entry : DurabilityRebalance.ITEMS.entrySet()) {
+                context.modify(entry.getKey(), builder -> {
+                    builder.set(DataComponents.MAX_DAMAGE, entry.getValue());
+                });
+            }
         });
     }
+
 }

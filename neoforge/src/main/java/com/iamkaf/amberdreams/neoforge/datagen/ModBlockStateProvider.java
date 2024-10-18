@@ -22,6 +22,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(AmberDreams.Blocks.BISMUTH_ORE);
         blockWithItem(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE);
         blockWithItem(AmberDreams.Blocks.MAGIC_BLOCK);
+//        blockWithItem(AmberDreams.Blocks.TOOL_BENCH);
+        blockWithItem(AmberDreams.Blocks.BRITTLEY_BLOCK);
 
         var bismuthBlockTexture = blockTexture(AmberDreams.Blocks.BISMUTH_BLOCK.get());
 

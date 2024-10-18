@@ -17,6 +17,7 @@
   "item.amberdreams.bismuth_chestplate": "Bismuth Chestplate",
   "item.amberdreams.bismuth_leggings": "Bismuth Leggings",
   "item.amberdreams.bismuth_boots": "Bismuth Boots",
+  "item.amberdreams.bismuth_horse_armor": "Bismuth Horse Armor",
 
   "block.amberdreams.bismuth_block": "Block of Bismuth",
   "block.amberdreams.bismuth_ore": "Bismuth Ore",
@@ -37,6 +38,10 @@
   "block.amberdreams.bismuth_trapdoor": "Bismuth Trapdoor",
 
   "block.amberdreams.bismuth_lamp": "Bismuth Lamp",
+
+  "block.amberdreams.tool_bench": "Tool Bench",
+  "block.amberdreams.repair_bench": "Repair Bench",
+  "block.amberdreams.brittley_block": "Brittley Block",
 
   "creativetab.amberdreams.amberdreams_tab": "Amber Dreams",
 

@@ -38,6 +38,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(AmberDreams.Items.BISMUTH_CHESTPLATE.get());
         basicItem(AmberDreams.Items.BISMUTH_LEGGINGS.get());
         basicItem(AmberDreams.Items.BISMUTH_BOOTS.get());
+        basicItem(AmberDreams.Items.BISMUTH_HORSE_ARMOR.get());
     }
 
     public void buttonItem(String id, String baseBlockId) {
