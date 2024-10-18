@@ -18,7 +18,7 @@ public class EquipmentLeveler {
     public static boolean isEligibleForLeveling(ItemStack stack) {
         var item = stack.getItem();
 
-        return item instanceof TieredItem || item instanceof ArmorItem || item instanceof ShieldItem;
+        return item instanceof TieredItem || item instanceof ArmorItem || item instanceof ShieldItem || item instanceof TridentItem || item instanceof ProjectileWeaponItem;
     }
 
     public static void initLevelingComponentIfNeeded(ItemStack stack) {
@@ -28,7 +28,7 @@ public class EquipmentLeveler {
             return;
         }
 
-        int maxExperience = 1;
+        int maxExperience = DEFAULT_MAX_EXPERIENCE_FOR_UNKNOWN_TIERS;
         if (stack.getItem() instanceof ArmorItem armorItem) {
             maxExperience = ArmorLeveler.getMaxExperienceForMaterial(armorItem.getMaterial().value());
         }
@@ -102,6 +102,9 @@ public class EquipmentLeveler {
             // TODO: need to review this if we decide to add support for modded shields
             ingredient = Ingredient.of(Items.IRON_INGOT);
         }
+        if (stack.getItem() instanceof TridentItem) {
+            ingredient = Ingredient.of(Items.PRISMARINE_SHARD);
+        }
 
         return ingredient;
     }
@@ -141,6 +144,10 @@ public class EquipmentLeveler {
     }
 
     public static boolean giveItemExperience(ItemStack item, int amount) {
+        if (item == null || item.isEmpty()) {
+            return false;
+        }
+
         var levelingComponent = AmberDreams.DataComponents.ITEM_EXPERIENCE.get();
         if (!item.has(levelingComponent)) {
             item.set(levelingComponent,

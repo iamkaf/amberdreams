@@ -1,6 +1,5 @@
 package com.iamkaf.amberdreams.event;
 
-import com.iamkaf.amberdreams.AmberDreams;
 import com.iamkaf.amberdreams.tool_upgrades.ArmorLeveler;
 import com.iamkaf.amberdreams.tool_upgrades.EquipmentLeveler;
 import com.iamkaf.amberdreams.tool_upgrades.ToolLeveler;
@@ -9,8 +8,8 @@ import dev.architectury.event.events.common.EntityEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.*;
 
 public class OnEntityHurt {
     static {
@@ -21,12 +20,10 @@ public class OnEntityHurt {
                 return EventResult.pass();
             }
 
-
             if (source.getEntity() instanceof Player player) {
-                processPlayerDealtDamage(player, amount);
+                processPlayerDealtDamage(player, source, amount);
             }
             if (entity instanceof Player player) {
-                AmberDreams.LOGGER.info("Player damage: {}", amount);
                 processPlayerTakenDamage(player, source, amount);
             }
 
@@ -38,35 +35,64 @@ public class OnEntityHurt {
 
     }
 
-    private static void processPlayerDealtDamage(Player player, float amount) {
+    private static void processPlayerDealtDamage(Player player, DamageSource source, float amount) {
         var level = player.level();
 
-        var handItem = player.getMainHandItem();
-        if (handItem.isEmpty()) {
+        var handItem = source.getWeaponItem();
+        if (handItem == null || handItem.isEmpty()) {
             return;
         }
 
-        // only supporting tools for now
-        // future plans could include: bows, tridents
-        boolean isWeapon = handItem.getItem() instanceof AxeItem || handItem.getItem() instanceof SwordItem;
-        if (!isWeapon) {
-            return;
-        }
+        boolean isMeleeWeapon =
+                handItem.getItem() instanceof SwordItem || handItem.getItem() instanceof AxeItem || handItem.getItem() instanceof TridentItem;
+        if (isMeleeWeapon) {
+            if (handItem.getItem() instanceof TridentItem) {
+                if (EquipmentLeveler.giveItemExperience(handItem, (int) amount)) {
+                    EquipmentLeveler.itemLeveledFeedback(level, player, handItem);
+                }
+            } else {
+                if (ToolLeveler.giveItemExperience(handItem, (int) amount)) {
+                    EquipmentLeveler.itemLeveledFeedback(level, player, handItem);
+                }
+            }
 
-        if (ToolLeveler.giveItemExperience(handItem, (int) amount)) {
-            EquipmentLeveler.itemLeveledFeedback(level, player, handItem);
-        }
 
-        var playerArmorSlots = player.getArmorSlots();
+            var playerArmorSlots = player.getArmorSlots();
 
-        for (var slot : playerArmorSlots) {
-            if (!EquipmentLeveler.isEligibleForLeveling(slot)) continue;
-            EquipmentLeveler.initLevelingComponentIfNeeded(slot);
+            for (var slot : playerArmorSlots) {
+                if (!EquipmentLeveler.isEligibleForLeveling(slot)) continue;
+                EquipmentLeveler.initLevelingComponentIfNeeded(slot);
 
-            if (ArmorLeveler.giveItemExperience(slot, (int) amount + 1)) {
-                EquipmentLeveler.itemLeveledFeedback(player.level(), player, slot);
+                if (ArmorLeveler.giveItemExperience(slot, (int) amount + 1)) {
+                    EquipmentLeveler.itemLeveledFeedback(player.level(), player, slot);
+                }
             }
         }
+
+        boolean isRangedWeapon = handItem.getItem() instanceof ProjectileWeaponItem;
+        boolean isProjectile = source.getDirectEntity() instanceof Projectile;
+        if (isRangedWeapon && isProjectile) {
+            ItemStack foundBow = tryToFindBow(player, handItem);
+            if (EquipmentLeveler.giveItemExperience(foundBow, (int) amount)) {
+                EquipmentLeveler.itemLeveledFeedback(level, player, handItem);
+            }
+        }
+    }
+
+    // this is not ideal but it's the best we got rn
+    private static ItemStack tryToFindBow(Player player, ItemStack stack) {
+        if (player.getMainHandItem().is(stack.getItem())) {
+            return player.getMainHandItem();
+        }
+        if (player.getOffhandItem().is(stack.getItem())) {
+            return player.getOffhandItem();
+        }
+        for (var slot : player.getInventory().items) {
+            if (slot.is(stack.getItem())) {
+                return slot;
+            }
+        }
+        return ItemStack.EMPTY;
     }
 
     private static void processPlayerTakenDamage(Player player, DamageSource source, float amount) {

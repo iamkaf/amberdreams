@@ -33,7 +33,7 @@ public class ToolLeveler {
     }
 
     public static boolean giveItemExperience(ItemStack tool, int amount) {
-        if (!(tool.getItem() instanceof TieredItem)) {
+        if (!(EquipmentLeveler.isEligibleForLeveling(tool))) {
             AmberDreams.LOGGER.warn("Tried to give experience to non-equipment item! {}", tool);
             return false;
         }
