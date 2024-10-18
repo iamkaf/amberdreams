@@ -1,5 +1,6 @@
 package com.iamkaf.amberdreams.event;
 
+import com.iamkaf.amberdreams.AmberDreams;
 import com.iamkaf.amberdreams.tool_upgrades.ArmorLeveler;
 import com.iamkaf.amberdreams.tool_upgrades.EquipmentLeveler;
 import com.iamkaf.amberdreams.tool_upgrades.ToolLeveler;
@@ -8,6 +9,7 @@ import dev.architectury.event.events.common.EntityEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.*;
 
@@ -38,7 +40,10 @@ public class OnEntityHurt {
     private static void processPlayerDealtDamage(Player player, DamageSource source, float amount) {
         var level = player.level();
 
-        var handItem = source.getWeaponItem();
+        ItemStack handItem = source.getWeaponItem();
+        if (handItem == null) {
+            handItem = checkForRocketCrossbow(player, source);
+        }
         if (handItem == null || handItem.isEmpty()) {
             return;
         }
@@ -72,7 +77,7 @@ public class OnEntityHurt {
         boolean isRangedWeapon = handItem.getItem() instanceof ProjectileWeaponItem;
         boolean isProjectile = source.getDirectEntity() instanceof Projectile;
         if (isRangedWeapon && isProjectile) {
-            ItemStack foundBow = tryToFindBow(player, handItem);
+            ItemStack foundBow = tryToFindStack(player, handItem);
             if (EquipmentLeveler.giveItemExperience(foundBow, (int) amount)) {
                 EquipmentLeveler.itemLeveledFeedback(level, player, handItem);
             }
@@ -80,7 +85,7 @@ public class OnEntityHurt {
     }
 
     // this is not ideal but it's the best we got rn
-    private static ItemStack tryToFindBow(Player player, ItemStack stack) {
+    private static ItemStack tryToFindStack(Player player, ItemStack stack) {
         if (player.getMainHandItem().is(stack.getItem())) {
             return player.getMainHandItem();
         }
@@ -93,6 +98,13 @@ public class OnEntityHurt {
             }
         }
         return ItemStack.EMPTY;
+    }
+
+    private static ItemStack checkForRocketCrossbow(Player player, DamageSource source) {
+        if (!(source.getDirectEntity() instanceof FireworkRocketEntity)) {
+            return null;
+        }
+        return tryToFindStack(player, new ItemStack(Items.CROSSBOW));
     }
 
     private static void processPlayerTakenDamage(Player player, DamageSource source, float amount) {

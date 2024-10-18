@@ -5,7 +5,8 @@
   "minVersion": "0.8",
   "client": [
     "ItemMixin",
-    "ShieldItemMixin"
+    "ShieldItemMixin",
+    "CrossbowItemMixin"
   ],
   "mixins": [
     "EnchantmentHelperMixin",
