@@ -54,6 +54,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
             }
         });
         simpleBlockItem(AmberDreams.Blocks.BISMUTH_LAMP.get(), models().cubeAll("bismuth_lamp_on", modLoc("block/bismuth_lamp_on")));
+
+        blockWithItem(AmberDreams.Blocks.TEMPERED_GOLD_BLOCK);
     }
 
     private void blockWithItem(Supplier<Block> block) {

@@ -39,6 +39,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(AmberDreams.Items.BISMUTH_LEGGINGS.get());
         basicItem(AmberDreams.Items.BISMUTH_BOOTS.get());
         basicItem(AmberDreams.Items.BISMUTH_HORSE_ARMOR.get());
+
+        basicItem(AmberDreams.Items.BOTTLE_O_HOTSTUFF.get());
+
+        basicItem(AmberDreams.Items.TEMPERED_GOLD_NUGGET.get());
+        basicItem(AmberDreams.Items.TEMPERED_GOLD_INGOT.get());
+        handheldItem("tempered_gold_sword");
+        handheldItem("tempered_gold_pickaxe");
+        handheldItem("tempered_gold_shovel");
+        handheldItem("tempered_gold_axe");
+        handheldItem("tempered_gold_hoe");
+        basicItem(AmberDreams.Items.TEMPERED_GOLD_HELMET.get());
+        basicItem(AmberDreams.Items.TEMPERED_GOLD_CHESTPLATE.get());
+        basicItem(AmberDreams.Items.TEMPERED_GOLD_LEGGINGS.get());
+        basicItem(AmberDreams.Items.TEMPERED_GOLD_BOOTS.get());
     }
 
     public void buttonItem(String id, String baseBlockId) {

@@ -35,6 +35,7 @@ public abstract class FishingHookMixin {
                 AmberDreams.LOGGER.debug("Fishing result (1): FISHING SUCCESSFUL");
                 var player = getPlayerOwner();
                 if (player != null && !player.level().isClientSide) {
+                    // TODO: level fishing rod
                     player.sendSystemMessage(Component.literal("+1 Fishing Exp")
                             .withStyle(ChatFormatting.GREEN));
                 }

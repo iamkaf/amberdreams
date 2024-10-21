@@ -9,6 +9,7 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
@@ -61,5 +62,9 @@ public class RegisterImpl {
     public static Holder<ArmorMaterial> armorMaterial(String name, ArmorMaterial material) {
         var obj = Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, AmberDreams.resource(name), material);
         return obj;
+    }
+
+    public static Holder<Potion> potion(String id, Supplier<Potion> potion) {
+        return Registry.registerForHolder(BuiltInRegistries.POTION, AmberDreams.resource(id), potion.get());
     }
 }

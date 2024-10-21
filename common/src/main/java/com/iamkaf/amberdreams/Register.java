@@ -6,6 +6,7 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
@@ -39,6 +40,11 @@ public class Register {
 
     @ExpectPlatform
     public static Holder<ArmorMaterial> armorMaterial(String name, ArmorMaterial material) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static Holder<Potion> potion(String id, Supplier<Potion> potion) {
         throw new AssertionError();
     }
 }

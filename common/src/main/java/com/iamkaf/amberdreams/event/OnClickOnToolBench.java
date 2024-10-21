@@ -1,9 +1,9 @@
 package com.iamkaf.amberdreams.event;
 
+import com.iamkaf.amber.api.inventory.InventoryHelper;
+import com.iamkaf.amber.api.inventory.ItemHelper;
+import com.iamkaf.amber.api.player.FeedbackHelper;
 import com.iamkaf.amberdreams.AmberDreams;
-import com.iamkaf.amberdreams.feedback.FeedbackHelper;
-import com.iamkaf.amberdreams.inventory.InventoryHelper;
-import com.iamkaf.amberdreams.inventory.ItemHelper;
 import com.iamkaf.amberdreams.tool_upgrades.EquipmentLeveler;
 import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.InteractionEvent;

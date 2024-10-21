@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "amberdreams:item/tempered_gold_leggings"
+  }
+}

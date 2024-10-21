@@ -1,11 +1,12 @@
-// 1.21.1	2024-10-18T09:23:25.4204808	Tags for minecraft:item mod id amberdreams
+// 1.21.1	2024-10-21T04:39:51.8964883	Tags for minecraft:item mod id amberdreams
 1847f18f25d3efdd1586fdee38bda7c17cdbe933 data/amberdreams/tags/item/transformable_items.json
-13a13e7ffabcfc3185ca04a2e193a326880a8d0a data/minecraft/tags/item/axes.json
-6a88cb2b482f286db40ec28252f17ce85949aff6 data/minecraft/tags/item/chest_armor.json
-47377c521435bd839109909e56d15581ec8feaaa data/minecraft/tags/item/foot_armor.json
-0744b1272635a0fe1a05e2453fdea3aa1065d8d5 data/minecraft/tags/item/head_armor.json
-adf9de4fb6cba61b4052a5887c5b6cc2bb27c21f data/minecraft/tags/item/hoes.json
-81be50c319262ecc55890373911857e710b45e13 data/minecraft/tags/item/leg_armor.json
-113037fb5e515ec9fba23b3bb39b8cb74a0fbe97 data/minecraft/tags/item/pickaxes.json
-d5fb9c5610da621bd53ba18d8cde45af15762c42 data/minecraft/tags/item/shovels.json
-dd37c0c053f1826f56e223d37e60c8efb1e1fb71 data/minecraft/tags/item/swords.json
+71af19e84632e8fc2c82000e3defe84808afd512 data/minecraft/tags/item/axes.json
+93914e831e0320d070f781148be2c5a12624ac8e data/minecraft/tags/item/chest_armor.json
+7a43016f0be73d14ca57a7e4beb1267e47da281f data/minecraft/tags/item/foot_armor.json
+7d98d6f4a831ce6d28e137cc9a5a466f8ca390ad data/minecraft/tags/item/head_armor.json
+9ff12f55991cb629db3aa13365dc6e14ea768023 data/minecraft/tags/item/hoes.json
+da1e0072832ce490962657eaf129aaac924919ec data/minecraft/tags/item/leg_armor.json
+3e8386bb76dd84cde66cf90fdd51bba15b1cb250 data/minecraft/tags/item/pickaxes.json
+cc0210fe3d70d106cdbbe3a30a7b175b546fd484 data/minecraft/tags/item/piglin_loved.json
+152e92fd300f57c5aebd61f26cee7f452c4ea292 data/minecraft/tags/item/shovels.json
+c4a69ebe27bd193d448b7ce76a4256a63ea957c1 data/minecraft/tags/item/swords.json

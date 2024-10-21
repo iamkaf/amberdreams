@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "amberdreams:block/tempered_gold_block"
+  }
+}

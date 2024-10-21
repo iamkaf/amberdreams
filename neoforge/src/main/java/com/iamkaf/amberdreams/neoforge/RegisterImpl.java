@@ -8,6 +8,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -29,6 +30,7 @@ public class RegisterImpl {
             Registries.ARMOR_MATERIAL,
             AmberDreams.MOD_ID
     );
+    public static final DeferredRegister<Potion> POTION = DeferredRegister.create(Registries.POTION, AmberDreams.MOD_ID);
 
     public static <T extends Block> Supplier<T> block(String id, Supplier<T> supplier) {
         var block = BLOCKS.register(id, supplier);
@@ -73,5 +75,9 @@ public class RegisterImpl {
         var obj = Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, AmberDreams.resource(name), material);
         return obj;
 //        return ARMOR_MATERIAL.register(name, () -> material);
+    }
+
+    public static Holder<Potion> potion(String id, Supplier<Potion> potion) {
+        return POTION.register(id, potion);
     }
 }

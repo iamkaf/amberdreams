@@ -24,7 +24,11 @@ public class ToolLeveler {
             Tiers.DIAMOND,
             500,
             Tiers.NETHERITE,
-            1000
+            1000,
+            Tiers.GOLD,
+            300,
+            ToolTier.TEMPERED_GOLD,
+            500
     );
     public static final Integer DEFAULT_MAX_EXPERIENCE_FOR_UNKNOWN_TIERS = 1000;
 

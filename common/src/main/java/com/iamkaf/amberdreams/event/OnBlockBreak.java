@@ -1,9 +1,9 @@
 package com.iamkaf.amberdreams.event;
 
+import com.iamkaf.amber.api.enchantment.EnchantmentUtils;
 import com.iamkaf.amberdreams.AmberDreams;
 import com.iamkaf.amberdreams.tool_upgrades.EquipmentLeveler;
 import com.iamkaf.amberdreams.tool_upgrades.ToolLeveler;
-import com.iamkaf.amberdreams.util.EnchantmentUtils;
 import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.BlockEvent;
 import dev.architectury.utils.value.IntValue;

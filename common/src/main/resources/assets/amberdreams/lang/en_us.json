@@ -43,6 +43,21 @@
   "block.amberdreams.repair_bench": "Repair Bench",
   "block.amberdreams.brittley_block": "Brittley Block",
 
+  "item.amberdreams.bottleohotstuff": "Bottle o' Hotstuff",
+
+  "item.amberdreams.tempered_gold_nugget": "Tempered Gold Nugget",
+  "item.amberdreams.tempered_gold_ingot": "Tempered Gold Ingot",
+  "block.amberdreams.tempered_gold_block": "Tempered Gold Block",
+  "item.amberdreams.tempered_gold_sword": "Tempered Gold Sword",
+  "item.amberdreams.tempered_gold_pickaxe": "Tempered Gold Pickaxe",
+  "item.amberdreams.tempered_gold_shovel": "Tempered Gold Shovel",
+  "item.amberdreams.tempered_gold_axe": "Tempered Gold Axe",
+  "item.amberdreams.tempered_gold_hoe": "Tempered Gold Hoe",
+  "item.amberdreams.tempered_gold_helmet": "Tempered Gold Helmet",
+  "item.amberdreams.tempered_gold_chestplate": "Tempered Gold Chestplate",
+  "item.amberdreams.tempered_gold_leggings": "Tempered Gold Leggings",
+  "item.amberdreams.tempered_gold_boots": "Tempered Gold Boots",
+
   "creativetab.amberdreams.amberdreams_tab": "Amber Dreams",
 
   "tag.item.amberdreams.transformable_items": "Transformable Items",

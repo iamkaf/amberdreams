@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-09T03:15:28.2659267	Block States: amberdreams
+// 1.21.1	2024-10-21T02:53:41.3034694	Block States: amberdreams
 41f252961d0ad37ef038969382ae8b93029c6b1a assets/amberdreams/blockstates/bismuth_block.json
 484e216403b46cb660936395d3732a0a7437ecf9 assets/amberdreams/blockstates/bismuth_button.json
 0ec43882d1716b8e8c85047853f76c6c5edc5b9a assets/amberdreams/blockstates/bismuth_deepslate_ore.json
@@ -14,6 +14,7 @@ b4a2c3f4c5729731283f7fd32a71854508dbef49 assets/amberdreams/blockstates/bismuth_
 f99906c8844e4634641642129d67cc2d911fca55 assets/amberdreams/blockstates/bismuth_wall.json
 637868002dfa4b2dfe1d826ac0bd4c81bf74c609 assets/amberdreams/blockstates/brittley_block.json
 67f5bb7ea016064a28d5c4d365b3ecb63af46b40 assets/amberdreams/blockstates/magic_block.json
+cf6a7dc05810ad84da7e1ae5a6490c90bffe9587 assets/amberdreams/blockstates/tempered_gold_block.json
 f13aa1060b063388ecaf20a98fbd3229a38d65c1 assets/amberdreams/models/block/bismuth_block.json
 b4b1c0573e783947a62e611ef2faa7bb191cc7dc assets/amberdreams/models/block/bismuth_button.json
 2d4293b031b19152ec818c0e8a5dc0769aca32c4 assets/amberdreams/models/block/bismuth_button_pressed.json
@@ -50,6 +51,7 @@ c34c7343fb5b431a4935ad2b0336f6b3edb85d42 assets/amberdreams/models/block/bismuth
 4e7b9134b5859d3436c8578f3b0e58f0a98ab9ae assets/amberdreams/models/block/bismuth_wall_side_tall.json
 d38c9a84356db3e2f1e0f10cc56a2cab5b3b0587 assets/amberdreams/models/block/brittley_block.json
 94dcaa6255a42ec20b5ea607402d10ed6a638132 assets/amberdreams/models/block/magic_block.json
+81360d48f27026a1ce2ad1216a2e0b203e25fed0 assets/amberdreams/models/block/tempered_gold_block.json
 f2758be45ecb7ee1e0c7e105e931d75182e453c5 assets/amberdreams/models/item/bismuth_block.json
 06de510f221d172de565398a554f6b231982620a assets/amberdreams/models/item/bismuth_deepslate_ore.json
 ce0fbbb192ab229a837b05c691d53f364c33a9ca assets/amberdreams/models/item/bismuth_fence_gate.json
@@ -61,3 +63,4 @@ cf8c37f3f3fc3a2510e8833f81af5d4f81ba748c assets/amberdreams/models/item/bismuth_
 edb9c3d18ac2799d39631460cbc7f1cee7bd1173 assets/amberdreams/models/item/bismuth_trapdoor.json
 e6414efc701ba085f999a9bcc92fdcf1f210870a assets/amberdreams/models/item/brittley_block.json
 92dc93d997170c380fc850d000458efa38359b14 assets/amberdreams/models/item/magic_block.json
+0fa2a8c076e6e685cffd30a9e785d67966b32b66 assets/amberdreams/models/item/tempered_gold_block.json

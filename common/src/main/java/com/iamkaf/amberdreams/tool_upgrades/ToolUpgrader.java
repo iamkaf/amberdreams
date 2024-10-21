@@ -14,8 +14,9 @@ public class ToolUpgrader {
             Map.of(Tiers.WOOD, Tiers.STONE, Tiers.STONE, Tiers.IRON, Tiers.IRON,
 //            ToolTier.BISMUTH,
 //            ToolTier.BISMUTH,
-                    Tiers.DIAMOND
-                    // netherite will keep using the old system
+                    Tiers.DIAMOND,
+                    Tiers.GOLD,
+                    ToolTier.TEMPERED_GOLD
             );
 
     public static @Nullable ItemStack upgrade(ItemStack oldTool) {
@@ -85,6 +86,7 @@ public class ToolUpgrader {
                 if (Tiers.IRON == tier) return Items.IRON_SWORD;
                 if (Tiers.DIAMOND == tier) return Items.DIAMOND_SWORD;
                 if (ToolTier.BISMUTH == tier) return AmberDreams.Items.BISMUTH_SWORD.get();
+                if (ToolTier.TEMPERED_GOLD == tier) return AmberDreams.Items.TEMPERED_GOLD_SWORD.get();
             };
             case AXE: {
                 if (Tiers.WOOD == tier) return Items.WOODEN_AXE;
@@ -92,6 +94,7 @@ public class ToolUpgrader {
                 if (Tiers.IRON == tier) return Items.IRON_AXE;
                 if (Tiers.DIAMOND == tier) return Items.DIAMOND_AXE;
                 if (ToolTier.BISMUTH == tier) return AmberDreams.Items.BISMUTH_AXE.get();
+                if (ToolTier.TEMPERED_GOLD == tier) return AmberDreams.Items.TEMPERED_GOLD_AXE.get();
             };
             case PICKAXE: {
                 if (Tiers.WOOD == tier) return Items.WOODEN_PICKAXE;
@@ -99,6 +102,7 @@ public class ToolUpgrader {
                 if (Tiers.IRON == tier) return Items.IRON_PICKAXE;
                 if (Tiers.DIAMOND == tier) return Items.DIAMOND_PICKAXE;
                 if (ToolTier.BISMUTH == tier) return AmberDreams.Items.BISMUTH_PICKAXE.get();
+                if (ToolTier.TEMPERED_GOLD == tier) return AmberDreams.Items.TEMPERED_GOLD_PICKAXE.get();
             };
             case SHOVEL: {
                 if (Tiers.WOOD == tier) return Items.WOODEN_SHOVEL;
@@ -106,6 +110,7 @@ public class ToolUpgrader {
                 if (Tiers.IRON == tier) return Items.IRON_SHOVEL;
                 if (Tiers.DIAMOND == tier) return Items.DIAMOND_SHOVEL;
                 if (ToolTier.BISMUTH == tier) return AmberDreams.Items.BISMUTH_SHOVEL.get();
+                if (ToolTier.TEMPERED_GOLD == tier) return AmberDreams.Items.TEMPERED_GOLD_SHOVEL.get();
             };
             case HOE: {
                 if (Tiers.WOOD == tier) return Items.WOODEN_HOE;
@@ -113,6 +118,7 @@ public class ToolUpgrader {
                 if (Tiers.IRON == tier) return Items.IRON_HOE;
                 if (Tiers.DIAMOND == tier) return Items.DIAMOND_HOE;
                 if (ToolTier.BISMUTH == tier) return AmberDreams.Items.BISMUTH_HOE.get();
+                if (ToolTier.TEMPERED_GOLD == tier) return AmberDreams.Items.TEMPERED_GOLD_HOE.get();
             };
             case HAMMER: {
                 return AmberDreams.Items.BISMUTH_HAMMER.get(); // Custom hammer for all tiers

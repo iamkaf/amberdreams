@@ -1,6 +1,5 @@
 package com.iamkaf.amberdreams.event;
 
-import com.iamkaf.amberdreams.AmberDreams;
 import com.iamkaf.amberdreams.tool_upgrades.ArmorLeveler;
 import com.iamkaf.amberdreams.tool_upgrades.EquipmentLeveler;
 import com.iamkaf.amberdreams.tool_upgrades.ToolLeveler;

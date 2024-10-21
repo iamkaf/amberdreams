@@ -4,18 +4,32 @@ import com.iamkaf.amberdreams.block.BismuthLampBlock;
 import com.iamkaf.amberdreams.block.MagicBlock;
 import com.iamkaf.amberdreams.event.*;
 import com.iamkaf.amberdreams.item.*;
+import com.iamkaf.amberdreams.loot.LootModifications;
 import com.iamkaf.amberdreams.registry.CreativeTabRegistryHolder;
 import com.iamkaf.amberdreams.tool_upgrades.ItemLevelDataComponent;
 import com.mojang.logging.LogUtils;
+import dev.architectury.event.EventResult;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentType;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -23,11 +37,15 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import org.slf4j.Logger;
 
 import java.util.List;
 import java.util.function.Supplier;
+
+import static net.minecraft.world.item.Items.GLASS_BOTTLE;
 
 public final class AmberDreams {
     public static final String MOD_ID = "amberdreams";
@@ -41,6 +59,7 @@ public final class AmberDreams {
         Blocks.init();
         CreativeModeTabs.init();
         DataComponents.init();
+        LootModifications.init();
 
         // Events
         OnHammerUsage.init();
@@ -52,6 +71,8 @@ public final class AmberDreams {
 //        OnPlayerJoin.init();
 //        OnRespawn.init();
         OnBrittleyBlockCollapse.init();
+        OnBottleUsedOnLavaCauldron.init();
+        OnNetherGoldMined.init();
     }
 
     /**
@@ -185,6 +206,132 @@ public final class AmberDreams {
                         false,
                         new Item.Properties().stacksTo(1)
                 )));
+
+        public static final Supplier<Item> BOTTLE_O_HOTSTUFF = CreativeModeTabs.TAB.add(Register.item(
+                "bottleohotstuff",
+                () -> new Item(new Item.Properties().stacksTo(1)
+                        .fireResistant()
+                        .craftRemainder(GLASS_BOTTLE)
+                        .food(new FoodProperties.Builder().nutrition(1)
+                                .saturationModifier(0.1F)
+                                .usingConvertsTo(GLASS_BOTTLE)
+                                .alwaysEdible()
+                                .build())) {
+                    @Override
+                    public ItemStack finishUsingItem(ItemStack stack, Level level,
+                            LivingEntity livingEntity) {
+                        // muahahahahahaha >:D
+                        if (!livingEntity.fireImmune()) {
+                            livingEntity.igniteForSeconds(4);
+                        }
+                        return super.finishUsingItem(stack, level, livingEntity);
+                    }
+
+                    @Override
+                    public SoundEvent getDrinkingSound() {
+                        return SoundEvents.HONEY_DRINK;
+                    }
+
+                    @Override
+                    public SoundEvent getEatingSound() {
+                        return SoundEvents.HONEY_DRINK;
+                    }
+
+                    @Override
+                    public void appendHoverText(ItemStack stack, TooltipContext context,
+                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                        tooltipComponents.add(Component.literal("Hot!").withStyle(ChatFormatting.GOLD));
+                        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                    }
+                }
+        ));
+        public static final Supplier<SwordItem> TEMPERED_GOLD_SWORD = CreativeModeTabs.TAB.add(Register.item(
+                "tempered_gold_sword",
+                () -> new SwordItem(ToolTier.TEMPERED_GOLD,
+                        new Item.Properties().attributes(SwordItem.createAttributes(ToolTier.TEMPERED_GOLD,
+                                2,
+                                -2.4f
+                        ))
+                )
+        ));
+        public static final Supplier<PickaxeItem> TEMPERED_GOLD_PICKAXE =
+                CreativeModeTabs.TAB.add(Register.item("tempered_gold_pickaxe",
+                        () -> new PickaxeItem(ToolTier.TEMPERED_GOLD,
+                                new Item.Properties().attributes(PickaxeItem.createAttributes(ToolTier.TEMPERED_GOLD,
+                                        0.0F,
+                                        -2.8f
+                                ))
+                        )
+                ));
+        public static final Supplier<ShovelItem> TEMPERED_GOLD_SHOVEL =
+                CreativeModeTabs.TAB.add(Register.item("tempered_gold_shovel",
+                        () -> new ShovelItem(ToolTier.TEMPERED_GOLD,
+                                new Item.Properties().attributes(ShovelItem.createAttributes(ToolTier.TEMPERED_GOLD,
+                                        0.5F,
+                                        -3.0f
+                                ))
+                        )
+                ));
+        public static final Supplier<AxeItem> TEMPERED_GOLD_AXE = CreativeModeTabs.TAB.add(Register.item(
+                "tempered_gold_axe",
+                () -> new AxeItem(ToolTier.TEMPERED_GOLD,
+                        new Item.Properties().attributes(AxeItem.createAttributes(ToolTier.TEMPERED_GOLD,
+                                3.0F,
+                                -3.0f
+                        ))
+                )
+        ));
+        public static final Supplier<HoeItem> TEMPERED_GOLD_HOE = CreativeModeTabs.TAB.add(Register.item(
+                "tempered_gold_hoe",
+                () -> new HoeItem(ToolTier.TEMPERED_GOLD,
+                        new Item.Properties().attributes(HoeItem.createAttributes(ToolTier.TEMPERED_GOLD,
+                                -3F,
+                                -1.0f
+                        ))
+                )
+        ));
+        public static final Supplier<ArmorItem> TEMPERED_GOLD_HELMET =
+                CreativeModeTabs.TAB.add(Register.item("tempered_gold_helmet", () -> new ArmorItem(
+                        ArmorMaterials.TEMPERED_GOLD,
+                        ArmorItem.Type.HELMET,
+                        new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(ArmorMaterials.TEMPERED_GOLD_DURABILITY_MULTIPLIER))
+                )));
+        public static final Supplier<ArmorItem> TEMPERED_GOLD_CHESTPLATE =
+                CreativeModeTabs.TAB.add(Register.item("tempered_gold_chestplate", () -> new ArmorItem(
+                        ArmorMaterials.TEMPERED_GOLD,
+                        ArmorItem.Type.CHESTPLATE,
+                        new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(
+                                ArmorMaterials.TEMPERED_GOLD_DURABILITY_MULTIPLIER))
+                )));
+        public static final Supplier<ArmorItem> TEMPERED_GOLD_LEGGINGS =
+                CreativeModeTabs.TAB.add(Register.item("tempered_gold_leggings", () -> new ArmorItem(
+                        ArmorMaterials.TEMPERED_GOLD,
+                        ArmorItem.Type.LEGGINGS,
+                        new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(ArmorMaterials.TEMPERED_GOLD_DURABILITY_MULTIPLIER))
+                )));
+        public static final Supplier<ArmorItem> TEMPERED_GOLD_BOOTS =
+                CreativeModeTabs.TAB.add(Register.item("tempered_gold_boots", () -> new ArmorItem(
+                        ArmorMaterials.TEMPERED_GOLD,
+                        ArmorItem.Type.BOOTS,
+                        new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(ArmorMaterials.TEMPERED_GOLD_DURABILITY_MULTIPLIER))
+                )));
+        public static Supplier<Item> TEMPERED_GOLD_INGOT = CreativeModeTabs.TAB.add(Register.item(
+                "tempered_gold_ingot",
+                () -> new Item(new Item.Properties()) {
+                    @Override
+                    public InteractionResultHolder<ItemStack> use(Level level, Player player,
+                            InteractionHand usedHand) {
+                        player.getItemInHand(usedHand)
+                                .getTags()
+                                .forEach(itemTagKey -> player.sendSystemMessage(Component.literal(itemTagKey.toString())));
+                        return super.use(level, player, usedHand);
+                    }
+                }
+        ));
+        public static Supplier<Item> TEMPERED_GOLD_NUGGET = CreativeModeTabs.TAB.add(Register.item(
+                "tempered_gold_nugget",
+                () -> new Item(new Item.Properties())
+        ));
 
         static void init() {
             Register.fuelItem(FROSTFIRE_ICE, 800);
@@ -321,6 +468,11 @@ public final class AmberDreams {
                         .sound(SoundType.BONE_BLOCK))
         ));
 
+        public static final Supplier<Block> TEMPERED_GOLD_BLOCK = CreativeModeTabs.TAB.add(Register.block(
+                "tempered_gold_block",
+                () -> new Block(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.GOLD_BLOCK))
+        ));
+
         static void init() {
         }
     }
@@ -336,6 +488,17 @@ public final class AmberDreams {
                         TierHelper.VanillaKnockbackResistance.IRON.knockbackResistance
                 ));
         public static final int BISMUTH_DURABILITY_MULTIPLIER = 15;
+
+        public static final Holder<ArmorMaterial> TEMPERED_GOLD =
+                Register.armorMaterial("tempered_gold", new ArmorMaterial(TierHelper.defense(1, 3, 5, 2, 4),
+                        TierHelper.VanillaEnchantability.GOLD.enchantability,
+                        SoundEvents.ARMOR_EQUIP_GOLD,
+                        () -> Ingredient.of(Items.TEMPERED_GOLD_INGOT.get()),
+                        TierHelper.genericLayers("tempered_gold"),
+                        TierHelper.VanillaToughness.GOLD.chestplate,
+                        TierHelper.VanillaKnockbackResistance.GOLD.knockbackResistance
+                ));
+        public static final int TEMPERED_GOLD_DURABILITY_MULTIPLIER = 8;
 
         static void init() {
         }

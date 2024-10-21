@@ -14,10 +14,9 @@ public class ArmorUpgrader {
             ArmorMaterials.CHAIN.value(),
             ArmorMaterials.IRON.value(),
             ArmorMaterials.IRON.value(),
-//            AmberDreams.ArmorMaterials.BISMUTH.value(),
-//            AmberDreams.ArmorMaterials.BISMUTH.value(),
-            ArmorMaterials.DIAMOND.value()
-            // netherite will keep using the old system
+            ArmorMaterials.DIAMOND.value(),
+            ArmorMaterials.GOLD.value(),
+            AmberDreams.ArmorMaterials.TEMPERED_GOLD.value()
     );
 
     public static @Nullable ItemStack upgrade(ItemStack oldArmor) {
@@ -43,6 +42,7 @@ public class ArmorUpgrader {
     }
 
     private static void copyAppropriateDataComponents(ItemStack oldTool, ItemStack newTool) {
+        // might need to find a broader solution for copying data components because this could delete data components of other mods
         newTool.set(DataComponents.CUSTOM_NAME, oldTool.get(DataComponents.CUSTOM_NAME));
         newTool.set(DataComponents.ENCHANTMENTS, oldTool.get(DataComponents.ENCHANTMENTS));
         newTool.set(DataComponents.LORE, oldTool.get(DataComponents.LORE));
@@ -73,6 +73,9 @@ public class ArmorUpgrader {
                     return AmberDreams.Items.BISMUTH_HELMET.get();
                 if (ArmorMaterials.DIAMOND.value() == material) return Items.DIAMOND_HELMET;
                 if (ArmorMaterials.NETHERITE.value() == material) return Items.NETHERITE_HELMET;
+                if (ArmorMaterials.GOLD.value() == material) return Items.GOLDEN_HELMET;
+                if (AmberDreams.ArmorMaterials.TEMPERED_GOLD.value() == material)
+                    return AmberDreams.Items.TEMPERED_GOLD_HELMET.get();
             }
 
             case ArmorItem.Type.CHESTPLATE: {
@@ -83,6 +86,9 @@ public class ArmorUpgrader {
                     return AmberDreams.Items.BISMUTH_CHESTPLATE.get();
                 if (ArmorMaterials.DIAMOND.value() == material) return Items.DIAMOND_CHESTPLATE;
                 if (ArmorMaterials.NETHERITE.value() == material) return Items.NETHERITE_CHESTPLATE;
+                if (ArmorMaterials.GOLD.value() == material) return Items.GOLDEN_CHESTPLATE;
+                if (AmberDreams.ArmorMaterials.TEMPERED_GOLD.value() == material)
+                    return AmberDreams.Items.TEMPERED_GOLD_CHESTPLATE.get();
             }
 
             case ArmorItem.Type.LEGGINGS: {
@@ -93,6 +99,9 @@ public class ArmorUpgrader {
                     return AmberDreams.Items.BISMUTH_LEGGINGS.get();
                 if (ArmorMaterials.DIAMOND.value() == material) return Items.DIAMOND_LEGGINGS;
                 if (ArmorMaterials.NETHERITE.value() == material) return Items.NETHERITE_LEGGINGS;
+                if (ArmorMaterials.GOLD.value() == material) return Items.GOLDEN_LEGGINGS;
+                if (AmberDreams.ArmorMaterials.TEMPERED_GOLD.value() == material)
+                    return AmberDreams.Items.TEMPERED_GOLD_LEGGINGS.get();
             }
 
             case ArmorItem.Type.BOOTS: {
@@ -103,6 +112,9 @@ public class ArmorUpgrader {
                     return AmberDreams.Items.BISMUTH_BOOTS.get();
                 if (ArmorMaterials.DIAMOND.value() == material) return Items.DIAMOND_BOOTS;
                 if (ArmorMaterials.NETHERITE.value() == material) return Items.NETHERITE_BOOTS;
+                if (ArmorMaterials.GOLD.value() == material) return Items.GOLDEN_BOOTS;
+                if (AmberDreams.ArmorMaterials.TEMPERED_GOLD.value() == material)
+                    return AmberDreams.Items.TEMPERED_GOLD_BOOTS.get();
             }
 
             default:
@@ -110,17 +122,6 @@ public class ArmorUpgrader {
                 // TODO: add shields
         }
 
-    }
-
-    public static boolean isReadyToUpgrade(ItemStack tool) {
-        var levelingComponent = AmberDreams.DataComponents.ITEM_EXPERIENCE.get();
-
-        var leveling = tool.get(levelingComponent);
-        if (leveling == null) {
-            return false;
-        }
-
-        return leveling.getLevel() >= EquipmentLeveler.MAXIMUM_LEVEL;
     }
 
     public static @Nullable ArmorMaterial getNextTier(ItemStack tool) {

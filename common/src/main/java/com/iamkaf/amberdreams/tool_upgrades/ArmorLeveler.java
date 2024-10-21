@@ -30,7 +30,11 @@ public class ArmorLeveler {
                     ArmorMaterials.DIAMOND.value(),
                     1500,
                     ArmorMaterials.NETHERITE.value(),
-                    3000
+                    3000,
+                    ArmorMaterials.GOLD.value(),
+                    500,
+                    AmberDreams.ArmorMaterials.TEMPERED_GOLD.value(),
+                    1000
             );
 
     public static Integer getMaxExperienceForMaterial(ArmorMaterial material) {

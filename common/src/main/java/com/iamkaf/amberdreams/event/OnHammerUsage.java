@@ -27,6 +27,12 @@ public class OnHammerUsage {
                 if (HARVESTED_BLOCKS.contains(initialBlockPos)) {
                     return EventResult.pass();
                 }
+                if (!mainHandItem.isCorrectToolForDrops(state)) {
+                    return EventResult.pass();
+                }
+                if (player.isShiftKeyDown()) {
+                    return EventResult.pass();
+                }
 
                 for (BlockPos pos : HammerItem.getBlocksToBeDestroyed(1, initialBlockPos, serverPlayer)) {
                     if (pos == initialBlockPos || !hammer.isCorrectToolForDrops(

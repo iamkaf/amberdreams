@@ -1,10 +1,10 @@
-// 1.21.1	2024-10-09T05:33:55.1540863	Tags for minecraft:block mod id amberdreams
+// 1.21.1	2024-10-21T02:53:41.3079781	Tags for minecraft:block mod id amberdreams
 e8262f29f2ec82563fe1997570b23277f0aa3b07 data/amberdreams/tags/block/incorrect_for_bismuth_tool.json
 32b13946c4cd1f944b029659ccce5fcb2adad4ff data/amberdreams/tags/block/needs_bismuth_tool.json
 63102aa1ad6416de7afc056784288948d8bd17d1 data/minecraft/tags/block/fences.json
 c68fbcf7547f730b45b5ead98c66f03a94b1b76a data/minecraft/tags/block/fence_gates.json
 c7e8b3ff075bb2d7ec2fd63002e7e1a53bcb9502 data/minecraft/tags/block/mineable/axe.json
-bb8892b94a990a399d9279f7e41257428bf7d2ff data/minecraft/tags/block/mineable/pickaxe.json
+120f2e2b9fbde85ca6f4cf23c61bfb34b247674e data/minecraft/tags/block/mineable/pickaxe.json
 4a5bd20f1ee301b9aec747868ab98c5da7d43378 data/minecraft/tags/block/needs_diamond_tool.json
 da9a507f9d69ccc92241df82e4cc06cd5454fa20 data/minecraft/tags/block/needs_iron_tool.json
 28d1cbd4101738cb8693fc130144cc7fb3d7813c data/minecraft/tags/block/walls.json

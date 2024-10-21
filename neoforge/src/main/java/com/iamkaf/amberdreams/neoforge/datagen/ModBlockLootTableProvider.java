@@ -46,6 +46,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(AmberDreams.Blocks.TOOL_BENCH.get());
         dropSelf(AmberDreams.Blocks.REPAIR_BENCH.get());
         dropOther(AmberDreams.Blocks.BRITTLEY_BLOCK.get(), Items.SUGAR);
+
+        dropSelf(AmberDreams.Blocks.TEMPERED_GOLD_BLOCK.get());
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
