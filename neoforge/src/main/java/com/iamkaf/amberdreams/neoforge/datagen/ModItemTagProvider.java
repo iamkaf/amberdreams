@@ -14,7 +14,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagProvider extends ItemTagsProvider {
-    public ModItemTagProvider(PackOutput arg, CompletableFuture<HolderLookup.Provider> completableFuture, CompletableFuture<TagLookup<Block>> completableFuture2, @Nullable ExistingFileHelper existingFileHelper) {
+    public ModItemTagProvider(PackOutput arg, CompletableFuture<HolderLookup.Provider> completableFuture,
+            CompletableFuture<TagLookup<Block>> completableFuture2,
+            @Nullable ExistingFileHelper existingFileHelper) {
         super(arg, completableFuture, completableFuture2, AmberDreams.MOD_ID, existingFileHelper);
     }
 
@@ -47,18 +49,17 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.LEG_ARMOR).add(AmberDreams.Items.TEMPERED_GOLD_LEGGINGS.get());
         tag(ItemTags.FOOT_ARMOR).add(AmberDreams.Items.TEMPERED_GOLD_BOOTS.get());
 
-        tag(ItemTags.PIGLIN_LOVED)
-            .add(AmberDreams.Items.TEMPERED_GOLD_SWORD.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_PICKAXE.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_SHOVEL.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_AXE.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_HOE.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_HELMET.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_CHESTPLATE.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_LEGGINGS.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_BOOTS.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_INGOT.get())
-            .add(AmberDreams.Items.TEMPERED_GOLD_NUGGET.get())
-            .add(AmberDreams.Blocks.TEMPERED_GOLD_BLOCK.get().asItem());
+        tag(ItemTags.PIGLIN_LOVED).add(AmberDreams.Items.TEMPERED_GOLD_SWORD.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_PICKAXE.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_SHOVEL.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_AXE.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_HOE.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_HELMET.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_CHESTPLATE.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_LEGGINGS.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_BOOTS.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_INGOT.get())
+                .add(AmberDreams.Items.TEMPERED_GOLD_NUGGET.get())
+                .add(AmberDreams.Blocks.TEMPERED_GOLD_BLOCK.get().asItem());
     }
 }

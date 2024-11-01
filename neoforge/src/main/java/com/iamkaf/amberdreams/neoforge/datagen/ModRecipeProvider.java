@@ -210,6 +210,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(AmberDreams.Items.TEMPERED_GOLD_INGOT.get())
                 .unlockedBy("has_tempered_gold_ingot", has(AmberDreams.Items.TEMPERED_GOLD_INGOT.get()))
                 .save(recipeOutput, "tempered_gold_from_nuggets");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, AmberDreams.Items.MEDPACK.get())
+                .requires(ItemTags.WOOL)
+                .requires(Items.APPLE)
+                .requires(Items.BONE_MEAL)
+                .requires(Items.GOLD_NUGGET)
+                // bruh
+//                .requires(Ingredient.of(PotionContents.createItemStack(Items.POTION, Potions.WATER)))
+                .unlockedBy("has_apple", has(Items.APPLE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, AmberDreams.Items.INERT_RECALL_POTION.get())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("AEA")
+                .define('A', Items.PHANTOM_MEMBRANE)
+                .define('B', AmberDreams.Items.TEMPERED_GOLD_INGOT.get())
+                .define('C', Items.AMETHYST_SHARD)
+                .define('D', AmberDreams.Items.BOTTLE_O_HOTSTUFF.get())
+                .define('E', Items.ENDER_PEARL)
+                .unlockedBy("has_phantom_membrane", has(Items.PHANTOM_MEMBRANE))
+                .save(recipeOutput);
     }
 
     private void simpleFullArmorSetRecipe(String id, Item material, Item helmet, Item chestplate,

@@ -7,8 +7,8 @@ import com.iamkaf.amberdreams.item.*;
 import com.iamkaf.amberdreams.loot.LootModifications;
 import com.iamkaf.amberdreams.registry.CreativeTabRegistryHolder;
 import com.iamkaf.amberdreams.tool_upgrades.ItemLevelDataComponent;
+import com.iamkaf.amberdreams.util.SimpleIntegerDataComponent;
 import com.mojang.logging.LogUtils;
-import dev.architectury.event.EventResult;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -17,9 +17,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -29,7 +26,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -37,9 +33,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
 import org.slf4j.Logger;
 
 import java.util.List;
@@ -73,6 +67,8 @@ public final class AmberDreams {
         OnBrittleyBlockCollapse.init();
         OnBottleUsedOnLavaCauldron.init();
         OnNetherGoldMined.init();
+
+        KeyMappings.init();
     }
 
     /**
@@ -80,6 +76,11 @@ public final class AmberDreams {
      */
     public static ResourceLocation resource(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    }
+
+    public static class KeyMappings {
+        static void init() {
+        }
     }
 
     public static class CreativeModeTabs {
@@ -315,7 +316,8 @@ public final class AmberDreams {
                         ArmorItem.Type.BOOTS,
                         new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(ArmorMaterials.TEMPERED_GOLD_DURABILITY_MULTIPLIER))
                 )));
-        public static Supplier<Item> TEMPERED_GOLD_INGOT = CreativeModeTabs.TAB.add(Register.item(
+
+        public static final Supplier<Item> TEMPERED_GOLD_INGOT = CreativeModeTabs.TAB.add(Register.item(
                 "tempered_gold_ingot",
                 () -> new Item(new Item.Properties()) {
                     @Override
@@ -328,9 +330,26 @@ public final class AmberDreams {
                     }
                 }
         ));
-        public static Supplier<Item> TEMPERED_GOLD_NUGGET = CreativeModeTabs.TAB.add(Register.item(
+        public static final Supplier<Item> TEMPERED_GOLD_NUGGET = CreativeModeTabs.TAB.add(Register.item(
                 "tempered_gold_nugget",
                 () -> new Item(new Item.Properties())
+        ));
+
+        public static final Supplier<Item> MEDPACK = CreativeModeTabs.TAB.add(Register.item("medpack",
+                () -> new MedpackItem(new Item.Properties().stacksTo(8))
+        ));
+
+        public static final Supplier<Item> INERT_RECALL_POTION = CreativeModeTabs.TAB.add(Register.item(
+                "inert_recall_potion",
+                () -> new InertRecallPotionItem(new Item.Properties().stacksTo(1)
+                        .component(DataComponents.INERT_RECALL_POTION_CHARGE.get(),
+                                SimpleIntegerDataComponent.empty()
+                        ))
+        ));
+
+        public static final Supplier<Item> RECALL_POTION = CreativeModeTabs.TAB.add(Register.item(
+                "recall_potion",
+                () -> new RecallPotionItem(new Item.Properties().stacksTo(1))
         ));
 
         static void init() {
@@ -511,6 +530,10 @@ public final class AmberDreams {
                 Register.dataComponentType("item_level",
                         builder -> builder.persistent(ItemLevelDataComponent.CODEC)
                 );
+        public static final Supplier<DataComponentType<SimpleIntegerDataComponent>>
+                INERT_RECALL_POTION_CHARGE = Register.dataComponentType("inert_recall_potion_charge",
+                builder -> builder.persistent(SimpleIntegerDataComponent.CODEC)
+        );
 
         static void init() {
         }

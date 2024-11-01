@@ -1,6 +1,8 @@
 package com.iamkaf.amberdreams.neoforge;
 
 import com.iamkaf.amberdreams.AmberDreams;
+import com.mojang.blaze3d.platform.InputConstants;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
@@ -11,7 +13,10 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.apache.logging.log4j.util.Lazy;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
@@ -79,5 +84,11 @@ public class RegisterImpl {
 
     public static Holder<Potion> potion(String id, Supplier<Potion> potion) {
         return POTION.register(id, potion);
+    }
+
+    public static final List<KeyMapping> KEY_MAPPINGS = new ArrayList<>();
+
+    public static void keybinding(Lazy<KeyMapping> mapping) {
+        KEY_MAPPINGS.add(mapping.get());
     }
 }

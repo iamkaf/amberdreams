@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-21T04:39:51.8934882	Recipes
+// 1.21.1	2024-11-01T20:11:21.1613331	Recipes
 fbd14a32affab5bf26325974459d356a83dcb086 data/amberdreams/advancement/recipes/building_blocks/bismuth_slab.json
 c788e2c35dce55e10344f1b885794a18585b95f3 data/amberdreams/advancement/recipes/building_blocks/bismuth_stairs.json
 61163d42da1f32a8ab39ebfda9af2aadc17a5af4 data/amberdreams/advancement/recipes/building_blocks/bismuth_wall.json
@@ -10,6 +10,7 @@ a82f343d7ee55891bdef5c1e772168ba09b7fa6b data/amberdreams/advancement/recipes/co
 28deda73983ddb87d17593b9c27d96ed0f0e2fa8 data/amberdreams/advancement/recipes/combat/tempered_gold_leggings.json
 832be37a890c124359dc47f035839e4de7c72baa data/amberdreams/advancement/recipes/combat/tempered_gold_sword.json
 03b2a9e808e5d995c422d1e4e7d21c9b1761d6fe data/amberdreams/advancement/recipes/decorations/bismuth_fence.json
+432a96986d53d24a6f812fbed4d3205c05364cb7 data/amberdreams/advancement/recipes/food/medpack.json
 3fa67ac391595b42605bef73e99101a620a46037 data/amberdreams/advancement/recipes/misc/bismuth.json
 137c1deee594b0edefd2790a942ea6eada83eb06 data/amberdreams/advancement/recipes/misc/bismuth_block.json
 989b8b6e431cb50ce0936ab2bbc13e3cbc254436 data/amberdreams/advancement/recipes/misc/bismuth_from_blasting_bismuth_deepslate_ore.json
@@ -31,6 +32,7 @@ ea3fe3a198a2ca9fbe2975f07d4cae2da28155d5 data/amberdreams/advancement/recipes/re
 67f1a5f8271b0b0d84b36facbb643134ca01bc40 data/amberdreams/advancement/recipes/tools/tempered_gold_hoe.json
 3a3aa7055697a159ef5cb2cbcb60bd8b96f9a467 data/amberdreams/advancement/recipes/tools/tempered_gold_pickaxe.json
 e6be5d18b9a7a18408bd3fbe9c216854c8b2b549 data/amberdreams/advancement/recipes/tools/tempered_gold_shovel.json
+c277c7768f0951bf81b1902b75a17d1219103e79 data/amberdreams/advancement/recipes/transportation/inert_recall_potion.json
 5651304702c9139e8cfc7c72e9202408ed84bf95 data/amberdreams/recipe/bismuth.json
 860ed0bff50d48470698f977eb0ac2b9e38b5708 data/amberdreams/recipe/bismuth_block.json
 1565c93b4a459a2725941829f276398a3090602d data/amberdreams/recipe/bismuth_button.json
@@ -50,6 +52,8 @@ d253e2f7c9697bb56244b6f27332319116ed9f11 data/amberdreams/recipe/bismuth_slab.js
 9c50db2d33b96fde6041fa502f0079161ad30504 data/amberdreams/recipe/bismuth_stairs.json
 f53581d312588de0ea57867f9b3f0af9f42267b0 data/amberdreams/recipe/bismuth_trapdoor.json
 a32bfc159e50f0619aa6f2dbd4cc19f42e24fe1d data/amberdreams/recipe/bismuth_wall.json
+645530c2ca2cb2601666f256ae52e39f3ac9cf36 data/amberdreams/recipe/inert_recall_potion.json
+0199c73d59c7db22965c80d9a4ed11f15f8eed0f data/amberdreams/recipe/medpack.json
 c6c67395305867f373d0996bfeb520c96448f839 data/amberdreams/recipe/repair_bench.json
 6810d4fbb7896620f9546acb87a3f7a9fce21ee5 data/amberdreams/recipe/tempered_gold_axe.json
 bef392ee383064a22c872215a297b3d27ed234a7 data/amberdreams/recipe/tempered_gold_block.json

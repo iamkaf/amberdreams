@@ -1,9 +1,13 @@
 package com.iamkaf.amberdreams.neoforge.event;
 
+import com.iamkaf.amberdreams.AmberDreams;
 import com.iamkaf.amberdreams.event.OnDamageBlockedByShield;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.RenderHighlightEvent;
 import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
 

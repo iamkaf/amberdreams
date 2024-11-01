@@ -53,6 +53,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(AmberDreams.Items.TEMPERED_GOLD_CHESTPLATE.get());
         basicItem(AmberDreams.Items.TEMPERED_GOLD_LEGGINGS.get());
         basicItem(AmberDreams.Items.TEMPERED_GOLD_BOOTS.get());
+
+        basicItem(AmberDreams.Items.MEDPACK.get());
+        basicItem(AmberDreams.Items.RECALL_POTION.get());
+        basicItem(AmberDreams.Items.INERT_RECALL_POTION.get());
     }
 
     public void buttonItem(String id, String baseBlockId) {

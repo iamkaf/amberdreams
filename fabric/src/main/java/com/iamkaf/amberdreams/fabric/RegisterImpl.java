@@ -1,8 +1,11 @@
 package com.iamkaf.amberdreams.fabric;
 
 import com.iamkaf.amberdreams.AmberDreams;
+import com.mojang.blaze3d.platform.InputConstants;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
@@ -11,6 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
+import org.apache.logging.log4j.util.Lazy;
 
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
@@ -66,5 +70,9 @@ public class RegisterImpl {
 
     public static Holder<Potion> potion(String id, Supplier<Potion> potion) {
         return Registry.registerForHolder(BuiltInRegistries.POTION, AmberDreams.resource(id), potion.get());
+    }
+
+    public static void keybinding(Lazy<KeyMapping> mapping) {
+        KeyBindingHelper.registerKeyBinding(mapping.get());
     }
 }
