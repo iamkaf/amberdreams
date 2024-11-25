@@ -232,6 +232,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('E', Items.ENDER_PEARL)
                 .unlockedBy("has_phantom_membrane", has(Items.PHANTOM_MEMBRANE))
                 .save(recipeOutput);
+
+        crayon(AmberDreams.Items.WHITE_CRAYON.get(), Items.WHITE_DYE, recipeOutput);
+        crayon(AmberDreams.Items.LIGHT_GRAY_CRAYON.get(), Items.LIGHT_GRAY_DYE, recipeOutput);
+        crayon(AmberDreams.Items.GRAY_CRAYON.get(), Items.GRAY_DYE, recipeOutput);
+        crayon(AmberDreams.Items.BLACK_CRAYON.get(), Items.BLACK_DYE, recipeOutput);
+        crayon(AmberDreams.Items.BROWN_CRAYON.get(), Items.BROWN_DYE, recipeOutput);
+        crayon(AmberDreams.Items.RED_CRAYON.get(), Items.RED_DYE, recipeOutput);
+        crayon(AmberDreams.Items.ORANGE_CRAYON.get(), Items.ORANGE_DYE, recipeOutput);
+        crayon(AmberDreams.Items.YELLOW_CRAYON.get(), Items.YELLOW_DYE, recipeOutput);
+        crayon(AmberDreams.Items.LIME_CRAYON.get(), Items.LIME_DYE, recipeOutput);
+        crayon(AmberDreams.Items.GREEN_CRAYON.get(), Items.GREEN_DYE, recipeOutput);
+        crayon(AmberDreams.Items.CYAN_CRAYON.get(), Items.CYAN_DYE, recipeOutput);
+        crayon(AmberDreams.Items.LIGHT_BLUE_CRAYON.get(), Items.LIGHT_BLUE_DYE, recipeOutput);
+        crayon(AmberDreams.Items.BLUE_CRAYON.get(), Items.BLUE_DYE, recipeOutput);
+        crayon(AmberDreams.Items.PURPLE_CRAYON.get(), Items.PURPLE_DYE, recipeOutput);
+        crayon(AmberDreams.Items.MAGENTA_CRAYON.get(), Items.MAGENTA_DYE, recipeOutput);
+        crayon(AmberDreams.Items.PINK_CRAYON.get(), Items.PINK_DYE, recipeOutput);
+    }
+
+    private void crayon(Item crayon, Item dye, RecipeOutput recipeOutput) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, crayon, 16)
+                .requires(Items.HONEYCOMB)
+                .requires(dye)
+                .requires(Items.SUGAR)
+                .unlockedBy("has_honeycomb", has(Items.HONEYCOMB))
+                .save(recipeOutput);
     }
 
     private void simpleFullArmorSetRecipe(String id, Item material, Item helmet, Item chestplate,
