@@ -23,6 +23,8 @@ public class ModSoundProvider extends SoundDefinitionsProvider {
         registerSimpleSound(AmberDreams.Sounds.WHISTLE_SCIFI);
         registerSimpleSound(AmberDreams.Sounds.WHISTLE_TOY);
         registerSimpleSound(AmberDreams.Sounds.WHISTLE_BOTTLE);
+
+        registerSimpleSound(AmberDreams.Sounds.POOP);
     }
 
     private void registerSimpleSound(Holder<SoundEvent> soundEvent) {

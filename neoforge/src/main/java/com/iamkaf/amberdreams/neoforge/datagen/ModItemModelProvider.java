@@ -65,6 +65,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(AmberDreams.Items.CATCALL_WHISTLE.get());
         basicItem(AmberDreams.Items.TOY_WHISTLE.get());
         basicItem(AmberDreams.Items.BOTTLE_WHISTLE.get());
+
+        basicItem(AmberDreams.Items.POOP.get());
     }
 
     public void buttonItem(String id, String baseBlockId) {

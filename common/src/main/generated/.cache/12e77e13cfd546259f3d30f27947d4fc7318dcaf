@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-24T22:56:57.1149047	Item Models: amberdreams
+// 1.21.1	2024-11-25T02:12:25.1666483	Item Models: amberdreams
 dcf1fe5ac4712023ec18376f99cbd643ba7285e2 assets/amberdreams/models/item/bismuth.json
 403dca3b3ce70e2f1681e1d9cbb1d98cc179a00b assets/amberdreams/models/item/bismuth_axe.json
 7b2aa21714644ec3b24131484e64dd3f9b99aa84 assets/amberdreams/models/item/bismuth_boots.json
@@ -21,6 +21,7 @@ fd0bf05190ea9fb38546fe38f4b58696857ca1b7 assets/amberdreams/models/item/flipflop
 fa65fa1ea50cf89bfb7149f21fd0027dffea43d8 assets/amberdreams/models/item/frostfire_ice.json
 18865fa8c06e46b88a9042b835de805247ffdaf9 assets/amberdreams/models/item/inert_recall_potion.json
 9da4f8045bad92b6e5bbc08ad5a9d65f743bade5 assets/amberdreams/models/item/medpack.json
+7790cffc78d2b3072934957404c209dc663de332 assets/amberdreams/models/item/poop.json
 9a21f257d2f93f0fc7f4643474e5c361139d59b0 assets/amberdreams/models/item/radish.json
 d2d34fd77f0eda805cba0ef68d4997cd38d185b8 assets/amberdreams/models/item/raw_bismuth.json
 7b122f18b932a30dc96658f0c7cd655d8382369e assets/amberdreams/models/item/recall_potion.json

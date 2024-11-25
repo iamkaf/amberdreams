@@ -1,4 +1,15 @@
 {
+  "poop": {
+    "replace": true,
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "amberdreams:poop",
+        "weight": 2
+      }
+    ],
+    "subtitle": "sound.amberdreams.poop"
+  },
   "whistle": {
     "replace": true,
     "sounds": [
