@@ -5,8 +5,10 @@ import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentType;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Instrument;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
@@ -54,6 +56,16 @@ public class Register {
 
     @ExpectPlatform
     public static void keybinding(Lazy<KeyMapping> mapping) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static Holder<Instrument> instrument(String id, Supplier<Instrument> instrument) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static Holder<SoundEvent> soundEvent(String id) {
         throw new AssertionError();
     }
 }

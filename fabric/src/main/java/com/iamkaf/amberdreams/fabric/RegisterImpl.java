@@ -11,6 +11,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
@@ -74,5 +75,13 @@ public class RegisterImpl {
 
     public static void keybinding(Lazy<KeyMapping> mapping) {
         KeyBindingHelper.registerKeyBinding(mapping.get());
+    }
+
+    public static Holder<Instrument> instrument(String id, Supplier<Instrument> instrument) {
+        return Registry.registerForHolder(BuiltInRegistries.INSTRUMENT, AmberDreams.resource(id), instrument.get());
+    }
+
+    public static Holder<SoundEvent> soundEvent(String id) {
+        return Registry.registerForHolder(BuiltInRegistries.SOUND_EVENT, AmberDreams.resource(id), SoundEvent.createVariableRangeEvent(AmberDreams.resource(id)));
     }
 }

@@ -17,6 +17,8 @@ public final class AmberDreamsNeoForge {
         RegisterImpl.BLOCKS.register(eBussy);
         RegisterImpl.TABS.register(eBussy);
         RegisterImpl.DATA_COMPONENT_TYPES.register(eBussy);
+        RegisterImpl.SOUND_EVENT.register(eBussy);
+        RegisterImpl.INSTRUMENT.register(eBussy);
 
         eBussy.addListener(this::modifyDefaultComponents);
     }

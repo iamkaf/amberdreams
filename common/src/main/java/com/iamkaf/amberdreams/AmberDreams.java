@@ -1,11 +1,14 @@
 package com.iamkaf.amberdreams;
 
+import com.iamkaf.amber.api.command.CommandFactory;
 import com.iamkaf.amberdreams.block.BismuthLampBlock;
 import com.iamkaf.amberdreams.block.MagicBlock;
+import com.iamkaf.amberdreams.command.DiceCommand;
 import com.iamkaf.amberdreams.event.*;
 import com.iamkaf.amberdreams.item.*;
 import com.iamkaf.amberdreams.loot.LootModifications;
 import com.iamkaf.amberdreams.registry.CreativeTabRegistryHolder;
+import com.iamkaf.amberdreams.tags.Tags;
 import com.iamkaf.amberdreams.tool_upgrades.ItemLevelDataComponent;
 import com.iamkaf.amberdreams.util.SimpleIntegerDataComponent;
 import com.mojang.logging.LogUtils;
@@ -54,6 +57,8 @@ public final class AmberDreams {
         CreativeModeTabs.init();
         DataComponents.init();
         LootModifications.init();
+        Sounds.init();
+        Instruments.init();
 
         // Events
         OnHammerUsage.init();
@@ -69,6 +74,8 @@ public final class AmberDreams {
         OnNetherGoldMined.init();
 
         KeyMappings.init();
+
+        CommandFactory.create(MOD_ID, "Amber Dreams", "dream").addSubcommand(new DiceCommand()).register();
     }
 
     /**
@@ -352,9 +359,42 @@ public final class AmberDreams {
                 () -> new RecallPotionItem(new Item.Properties().stacksTo(1))
         ));
 
+        public static final Supplier<Item> FLIPFLOP = CreativeModeTabs.TAB.add(Register.item(
+                "flipflop",
+                () -> new SnowballItem(new Item.Properties()) {
+                    @Override
+                    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                        tooltipComponents.add(Component.translatable("text.amberdreams.throwable").withStyle(ChatFormatting.AQUA));
+                        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                    }
+                }
+        ));
+
+        public static final Supplier<Item> WHISTLE = CreativeModeTabs.TAB.add(Register.item(
+                "whistle",
+                () -> new WhistleItem(Tags.Instruments.WHISTLE)
+        ));
+        public static final Supplier<Item> CATCALL_WHISTLE = CreativeModeTabs.TAB.add(Register.item(
+                "whistle_catcall",
+                () -> new WhistleItem(Tags.Instruments.CATCALL_WHISTLE)
+        ));
+        public static final Supplier<Item> SCIFI_WHISTLE = CreativeModeTabs.TAB.add(Register.item(
+                "whistle_scifi",
+                () -> new WhistleItem(Tags.Instruments.SCIFI_WHISTLE)
+        ));
+        public static final Supplier<Item> TOY_WHISTLE = CreativeModeTabs.TAB.add(Register.item(
+                "whistle_toy",
+                () -> new WhistleItem(Tags.Instruments.TOY_WHISTLE)
+        ));
+        public static final Supplier<Item> BOTTLE_WHISTLE = CreativeModeTabs.TAB.add(Register.item(
+                "whistle_bottle",
+                () -> new WhistleItem(Tags.Instruments.BOTTLE_WHISTLE)
+        ));
+
         static void init() {
             Register.fuelItem(FROSTFIRE_ICE, 800);
             Register.fuelItem(STARLIGHT_ASHES, 1200);
+            DispenserBlock.registerProjectileBehavior(FLIPFLOP.get());
         }
     }
 
@@ -534,6 +574,35 @@ public final class AmberDreams {
                 INERT_RECALL_POTION_CHARGE = Register.dataComponentType("inert_recall_potion_charge",
                 builder -> builder.persistent(SimpleIntegerDataComponent.CODEC)
         );
+
+        static void init() {
+        }
+    }
+
+    public static class Sounds {
+        public static final Holder<SoundEvent> WHISTLE = Register.soundEvent("whistle");
+        public static final Holder<SoundEvent> WHISTLE_CATCALL = Register.soundEvent("whistle_catcall");
+        public static final Holder<SoundEvent> WHISTLE_SCIFI = Register.soundEvent("whistle_scifi");
+        public static final Holder<SoundEvent> WHISTLE_TOY = Register.soundEvent("whistle_toy");
+        public static final Holder<SoundEvent> WHISTLE_BOTTLE = Register.soundEvent("whistle_bottle");
+
+        static void init() {
+        }
+    }
+
+    public static class Instruments {
+        public static final Holder<Instrument> WHISTLE =
+                Register.instrument("whistle", () -> new Instrument(Sounds.WHISTLE, 40, 140f));
+        public static final Holder<Instrument> WHISTLE_CATCALL = Register.instrument(
+                "whistle_catcall",
+                () -> new Instrument(Sounds.WHISTLE_CATCALL, 40, 140f)
+        );
+        public static final Holder<Instrument> WHISTLE_SCIFI =
+                Register.instrument("whistle_scifi", () -> new Instrument(Sounds.WHISTLE_SCIFI, 60, 140f));
+        public static final Holder<Instrument> WHISTLE_TOY =
+                Register.instrument("whistle_toy", () -> new Instrument(Sounds.WHISTLE_TOY, 40, 140f));
+        public static final Holder<Instrument> WHISTLE_BOTTLE =
+                Register.instrument("whistle_bottle", () -> new Instrument(Sounds.WHISTLE_BOTTLE, 40, 140f));
 
         static void init() {
         }

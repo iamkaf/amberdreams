@@ -4,6 +4,7 @@ import com.iamkaf.amberdreams.AmberDreams;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Instrument;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
@@ -24,6 +25,10 @@ public class Tags {
         return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(namespace, path));
     }
 
+    private static TagKey<Instrument> createInstrumentTag(String namespace, String path) {
+        return TagKey.create(Registries.INSTRUMENT, ResourceLocation.fromNamespaceAndPath(namespace, path));
+    }
+
     public static class Items {
         public static final TagKey<Item> TRANSFORMABLE_ITEMS = createItemTag("transformable_items");
         public static final TagKey<Item> HEAD_ARMOR = createItemTag("minecraft", "head_armor");
@@ -35,5 +40,13 @@ public class Tags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_BISMUTH_TOOL = createBlockTag("needs_bismuth_tool");
         public static final TagKey<Block> INCORRECT_FOR_BISMUTH_TOOL = createBlockTag("incorrect_for_bismuth_tool");
+    }
+
+    public static class Instruments {
+        public static final TagKey<Instrument> WHISTLE = createInstrumentTag("amberdreams", "whistle");
+        public static final TagKey<Instrument> CATCALL_WHISTLE = createInstrumentTag("amberdreams", "whistle_catcall");
+        public static final TagKey<Instrument> SCIFI_WHISTLE = createInstrumentTag("amberdreams", "whistle_scifi");
+        public static final TagKey<Instrument> TOY_WHISTLE = createInstrumentTag("amberdreams", "whistle_toy");
+        public static final TagKey<Instrument> BOTTLE_WHISTLE = createInstrumentTag("amberdreams", "whistle_bottle");
     }
 }

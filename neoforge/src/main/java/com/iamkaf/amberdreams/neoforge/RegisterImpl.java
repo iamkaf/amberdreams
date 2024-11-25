@@ -9,6 +9,7 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
@@ -36,6 +37,8 @@ public class RegisterImpl {
             AmberDreams.MOD_ID
     );
     public static final DeferredRegister<Potion> POTION = DeferredRegister.create(Registries.POTION, AmberDreams.MOD_ID);
+    public static final DeferredRegister<Instrument> INSTRUMENT = DeferredRegister.create(Registries.INSTRUMENT, AmberDreams.MOD_ID);
+    public static final DeferredRegister<SoundEvent> SOUND_EVENT = DeferredRegister.create(Registries.SOUND_EVENT, AmberDreams.MOD_ID);
 
     public static <T extends Block> Supplier<T> block(String id, Supplier<T> supplier) {
         var block = BLOCKS.register(id, supplier);
@@ -90,5 +93,13 @@ public class RegisterImpl {
 
     public static void keybinding(Lazy<KeyMapping> mapping) {
         KEY_MAPPINGS.add(mapping.get());
+    }
+
+    public static Holder<Instrument> instrument(String id, Supplier<Instrument> instrument) {
+        return INSTRUMENT.register(id, instrument);
+    }
+
+    public static Holder<SoundEvent> soundEvent(String id) {
+        return SOUND_EVENT.register(id, () -> SoundEvent.createVariableRangeEvent(AmberDreams.resource(id)));
     }
 }

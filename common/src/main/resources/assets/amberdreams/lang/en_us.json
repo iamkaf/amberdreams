@@ -68,5 +68,19 @@
   "tag.block.amberdreams.needs_bismuth_tool": "Needs Bismuth Tool",
   "tag.block.amberdreams.incorrect_for_bismuth_tool": "Incorrect For Bismuth Tool",
   "tag.item.c.bismuths": "Bismuths",
-  "tag.item.c.hammers": "Hammers"
+  "tag.item.c.hammers": "Hammers",
+
+  "item.amberdreams.flipflop": "Flip Flop",
+  "text.amberdreams.throwable": "Throwable",
+
+  "item.amberdreams.whistle": "Whistle",
+  "item.amberdreams.whistle_catcall": "Catcall Whistle",
+  "item.amberdreams.whistle_scifi": "Sci-Fi Whistle",
+  "item.amberdreams.whistle_toy": "Toy Whistle",
+  "item.amberdreams.whistle_bottle": "Bottle Whistle",
+  "instrument.amberdreams.whistle": "Whistle",
+  "instrument.amberdreams.whistle_catcall": "Catcall",
+  "instrument.amberdreams.whistle_scifi": "Sci-Fi",
+  "instrument.amberdreams.whistle_toy": "Toy",
+  "instrument.amberdreams.whistle_bottle": "Bottle"
 }

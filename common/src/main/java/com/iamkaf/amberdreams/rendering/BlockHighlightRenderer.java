@@ -1,6 +1,6 @@
 package com.iamkaf.amberdreams.rendering;
 
-import com.iamkaf.amber.api.aabb.ShapeMerger;
+import com.iamkaf.amber.api.aabb.BoundingBoxMerger;
 import com.iamkaf.amberdreams.item.HammerItem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -107,7 +107,7 @@ public class BlockHighlightRenderer {
 
         // TODO: optimize this
         Collection<VoxelShape> shapes = new HashSet<>();
-        for (AABB aabb : ShapeMerger.merge(breakBlocks.stream()
+        for (AABB aabb : BoundingBoxMerger.merge(breakBlocks.stream()
                 .filter(blockPos -> tool.isCorrectToolForDrops(level.getBlockState(blockPos)))
                 .toList(), origin)) {
             shapes.add(Shapes.create(aabb.inflate(0.005d)));

@@ -57,6 +57,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(AmberDreams.Items.MEDPACK.get());
         basicItem(AmberDreams.Items.RECALL_POTION.get());
         basicItem(AmberDreams.Items.INERT_RECALL_POTION.get());
+
+        basicItem(AmberDreams.Items.FLIPFLOP.get());
+
+        basicItem(AmberDreams.Items.WHISTLE.get());
+        basicItem(AmberDreams.Items.SCIFI_WHISTLE.get());
+        basicItem(AmberDreams.Items.CATCALL_WHISTLE.get());
+        basicItem(AmberDreams.Items.TOY_WHISTLE.get());
+        basicItem(AmberDreams.Items.BOTTLE_WHISTLE.get());
     }
 
     public void buttonItem(String id, String baseBlockId) {

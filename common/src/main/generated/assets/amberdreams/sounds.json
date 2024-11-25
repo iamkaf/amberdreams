@@ -1,0 +1,57 @@
+{
+  "whistle": {
+    "replace": true,
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "amberdreams:whistle",
+        "weight": 2
+      }
+    ],
+    "subtitle": "sound.amberdreams.whistle"
+  },
+  "whistle_bottle": {
+    "replace": true,
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "amberdreams:whistle_bottle",
+        "weight": 2
+      }
+    ],
+    "subtitle": "sound.amberdreams.whistle_bottle"
+  },
+  "whistle_catcall": {
+    "replace": true,
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "amberdreams:whistle_catcall",
+        "weight": 2
+      }
+    ],
+    "subtitle": "sound.amberdreams.whistle_catcall"
+  },
+  "whistle_scifi": {
+    "replace": true,
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "amberdreams:whistle_scifi",
+        "weight": 2
+      }
+    ],
+    "subtitle": "sound.amberdreams.whistle_scifi"
+  },
+  "whistle_toy": {
+    "replace": true,
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "amberdreams:whistle_toy",
+        "weight": 2
+      }
+    ],
+    "subtitle": "sound.amberdreams.whistle_toy"
+  }
+}

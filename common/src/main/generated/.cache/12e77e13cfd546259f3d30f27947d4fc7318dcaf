@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-01T19:14:06.9569088	Item Models: amberdreams
+// 1.21.1	2024-11-24T22:56:57.1149047	Item Models: amberdreams
 dcf1fe5ac4712023ec18376f99cbd643ba7285e2 assets/amberdreams/models/item/bismuth.json
 403dca3b3ce70e2f1681e1d9cbb1d98cc179a00b assets/amberdreams/models/item/bismuth_axe.json
 7b2aa21714644ec3b24131484e64dd3f9b99aa84 assets/amberdreams/models/item/bismuth_boots.json
@@ -17,6 +17,7 @@ ca2b7e4becca797c12963c487afcc8294c4acea6 assets/amberdreams/models/item/bismuth_
 e75f07c548af6cde166ce944fcd52ce6f792990b assets/amberdreams/models/item/bismuth_wall.json
 c55ab54c8bc536930101f66d6bfc4cdde44ebaad assets/amberdreams/models/item/bottleohotstuff.json
 da2737452c0fbfd553aaa3f599513ca5013704bd assets/amberdreams/models/item/chisel.json
+fd0bf05190ea9fb38546fe38f4b58696857ca1b7 assets/amberdreams/models/item/flipflop.json
 fa65fa1ea50cf89bfb7149f21fd0027dffea43d8 assets/amberdreams/models/item/frostfire_ice.json
 18865fa8c06e46b88a9042b835de805247ffdaf9 assets/amberdreams/models/item/inert_recall_potion.json
 9da4f8045bad92b6e5bbc08ad5a9d65f743bade5 assets/amberdreams/models/item/medpack.json
@@ -35,3 +36,8 @@ f9e532add491ca2ffc6d7884cd215a2889439e8b assets/amberdreams/models/item/tempered
 061b20b03b538acea2249125a9263c96b081a1a4 assets/amberdreams/models/item/tempered_gold_pickaxe.json
 fa07d55221ad20319b4c165c27465329baac72a3 assets/amberdreams/models/item/tempered_gold_shovel.json
 599a5ed47ff0411b0af32e2fa73441fefd66e2d6 assets/amberdreams/models/item/tempered_gold_sword.json
+a7a01537077cc36477024425849664acce3a147f assets/amberdreams/models/item/whistle.json
+4306d6d4e6f44c4d429d87cff66fde32182f53ff assets/amberdreams/models/item/whistle_bottle.json
+0f6d72dced3f41b52bb99237b7adcd29805ed2c3 assets/amberdreams/models/item/whistle_catcall.json
+add7f8560bf7f33e1f4574abb083e625e7b282e3 assets/amberdreams/models/item/whistle_scifi.json
+e26acd26b11dff27e15b4708e34e21cddcceedc8 assets/amberdreams/models/item/whistle_toy.json
