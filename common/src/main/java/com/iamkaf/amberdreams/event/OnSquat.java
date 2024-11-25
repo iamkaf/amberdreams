@@ -10,6 +10,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 
 /**
  * Makes the player drop poop every few ticks if they're sneaking.
@@ -31,8 +32,7 @@ public class OnSquat {
         }
 
         LevelHelper.runEveryXTicks(level, POOP_RATE, time -> {
-            AmberDreams.LOGGER.info("POOPING.");
-            if (player.isShiftKeyDown()) {
+            if (player.isShiftKeyDown() && level.getBlockState(player.blockPosition().below()).is(Blocks.QUARTZ_BLOCK)) {
                 ItemStack poopStack = new ItemStack(AmberDreams.Items.POOP.get());
                 var poop = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), poopStack);
                 poop.setPickUpDelay(30);

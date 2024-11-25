@@ -67,6 +67,23 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(AmberDreams.Items.BOTTLE_WHISTLE.get());
 
         basicItem(AmberDreams.Items.POOP.get());
+
+        basicItem(AmberDreams.Items.WHITE_CRAYON.get());
+        basicItem(AmberDreams.Items.LIGHT_GRAY_CRAYON.get());
+        basicItem(AmberDreams.Items.GRAY_CRAYON.get());
+        basicItem(AmberDreams.Items.BLACK_CRAYON.get());
+        basicItem(AmberDreams.Items.BROWN_CRAYON.get());
+        basicItem(AmberDreams.Items.RED_CRAYON.get());
+        basicItem(AmberDreams.Items.ORANGE_CRAYON.get());
+        basicItem(AmberDreams.Items.YELLOW_CRAYON.get());
+        basicItem(AmberDreams.Items.LIME_CRAYON.get());
+        basicItem(AmberDreams.Items.GREEN_CRAYON.get());
+        basicItem(AmberDreams.Items.CYAN_CRAYON.get());
+        basicItem(AmberDreams.Items.LIGHT_BLUE_CRAYON.get());
+        basicItem(AmberDreams.Items.BLUE_CRAYON.get());
+        basicItem(AmberDreams.Items.PURPLE_CRAYON.get());
+        basicItem(AmberDreams.Items.MAGENTA_CRAYON.get());
+        basicItem(AmberDreams.Items.PINK_CRAYON.get());
     }
 
     public void buttonItem(String id, String baseBlockId) {

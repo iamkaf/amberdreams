@@ -395,16 +395,137 @@ public final class AmberDreams {
         public static final Supplier<Item> POOP =
                 CreativeModeTabs.TAB.add(Register.item("poop", () -> new SnowballItem(new Item.Properties()) {
                     @Override
-                    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
-                        level.playSound(null, player.blockPosition(), Sounds.POOP.value(), SoundSource.PLAYERS, 1f, 1f);
+                    public InteractionResultHolder<ItemStack> use(Level level, Player player,
+                            InteractionHand usedHand) {
+                        level.playSound(
+                                null,
+                                player.blockPosition(),
+                                Sounds.POOP.value(),
+                                SoundSource.PLAYERS,
+                                1f,
+                                1f
+                        );
                         return super.use(level, player, usedHand);
                     }
                 }));
 
+        public static final Supplier<Item> WHITE_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "white_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> LIGHT_GRAY_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "light_gray_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> GRAY_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "gray_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> BLACK_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "black_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> BROWN_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "brown_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> RED_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "red_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> ORANGE_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "orange_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> YELLOW_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "yellow_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> LIME_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "lime_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> GREEN_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "green_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> CYAN_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "cyan_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> LIGHT_BLUE_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "light_blue_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> BLUE_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "blue_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> PURPLE_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "purple_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> MAGENTA_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "magenta_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+        public static final Supplier<Item> PINK_CRAYON = CreativeModeTabs.TAB.add(Register.item(
+                "pink_crayon",
+                () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
+                        .nutrition(1)
+                        .alwaysEdible()
+                        .build()))
+        ));
+
         static void init() {
             Register.fuelItem(FROSTFIRE_ICE, 800);
             Register.fuelItem(STARLIGHT_ASHES, 1200);
-            DispenserBlock.registerProjectileBehavior(FLIPFLOP.get());
+//            DispenserBlock.registerProjectileBehavior(FLIPFLOP.get());
         }
     }
 

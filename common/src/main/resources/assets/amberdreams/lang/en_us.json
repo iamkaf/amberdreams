@@ -84,5 +84,22 @@
   "instrument.amberdreams.whistle_toy": "Toy",
   "instrument.amberdreams.whistle_bottle": "Bottle",
 
-  "item.amberdreams.poop": "Poop"
+  "item.amberdreams.poop": "Poop",
+
+  "item.amberdreams.white_crayon": "White Crayon",
+  "item.amberdreams.light_gray_crayon": "Light Gray Crayon",
+  "item.amberdreams.gray_crayon":  "Gray Crayon",
+  "item.amberdreams.black_crayon": "Black Crayon",
+  "item.amberdreams.brown_crayon":  "Brown Crayon",
+  "item.amberdreams.red_crayon": "Red Crayon",
+  "item.amberdreams.orange_crayon":  "Orange Crayon",
+  "item.amberdreams.yellow_crayon": "Yellow Crayon",
+  "item.amberdreams.lime_crayon":  "Lime Crayon",
+  "item.amberdreams.green_crayon": "Green Crayon",
+  "item.amberdreams.cyan_crayon":  "Cyan Crayon",
+  "item.amberdreams.light_blue_crayon": "Light Blue Crayon",
+  "item.amberdreams.blue_crayon":  "Blue Crayon",
+  "item.amberdreams.purple_crayon": "Purple Crayon",
+  "item.amberdreams.magenta_crayon":  "Magenta Crayon",
+  "item.amberdreams.pink_crayon": "Pink Crayon"
 }
