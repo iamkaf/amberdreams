@@ -1,9 +1,7 @@
-// 1.21.1	2024-11-25T14:01:10.4567584	Recipes
+// 1.21.1	2024-11-29T07:34:09.8050998	Recipes
 fbd14a32affab5bf26325974459d356a83dcb086 data/amberdreams/advancement/recipes/building_blocks/bismuth_slab.json
 c788e2c35dce55e10344f1b885794a18585b95f3 data/amberdreams/advancement/recipes/building_blocks/bismuth_stairs.json
 61163d42da1f32a8ab39ebfda9af2aadc17a5af4 data/amberdreams/advancement/recipes/building_blocks/bismuth_wall.json
-fba825b79ff064f650214369220bfa9b2c6e2883 data/amberdreams/advancement/recipes/building_blocks/repair_bench.json
-01be4266cc33ff797e08ba10326367563ff22f79 data/amberdreams/advancement/recipes/building_blocks/tool_bench.json
 ec45edf0cd14f60c2407262243563faed2f4ce3b data/amberdreams/advancement/recipes/combat/tempered_gold_boots.json
 a82f343d7ee55891bdef5c1e772168ba09b7fa6b data/amberdreams/advancement/recipes/combat/tempered_gold_chestplate.json
 51166662ab5d5052ff5d567b3d6bc4c899ee2bc9 data/amberdreams/advancement/recipes/combat/tempered_gold_helmet.json
@@ -84,7 +82,6 @@ bf021fa10f78187c4565ebb549a2116e15e817c4 data/amberdreams/recipe/orange_crayon.j
 2efb0d01bdc07188a79cac6fcab08b526279b869 data/amberdreams/recipe/pink_crayon.json
 c825f2e5de847e1651459b59d593652fc5754447 data/amberdreams/recipe/purple_crayon.json
 863b4f1d96e416a95285cca04e89b42abc430e3f data/amberdreams/recipe/red_crayon.json
-c6c67395305867f373d0996bfeb520c96448f839 data/amberdreams/recipe/repair_bench.json
 6810d4fbb7896620f9546acb87a3f7a9fce21ee5 data/amberdreams/recipe/tempered_gold_axe.json
 bef392ee383064a22c872215a297b3d27ed234a7 data/amberdreams/recipe/tempered_gold_block.json
 537c8a6d7e6c064f5d8d2617791485a0264c20a9 data/amberdreams/recipe/tempered_gold_boots.json
@@ -96,7 +93,6 @@ daa708298cf2417d00875241be799bd2a4c29e9f data/amberdreams/recipe/tempered_gold_l
 740319ab0e6048fdf09e3293ee4edcb831dffb11 data/amberdreams/recipe/tempered_gold_pickaxe.json
 88c5fbf0765353b532f7720482e910e193eff796 data/amberdreams/recipe/tempered_gold_shovel.json
 749e2487c69aa31a2bf7e81c17d13115a9a260c9 data/amberdreams/recipe/tempered_gold_sword.json
-bb75e538da02de40ed30dbbd785b4861fef5ce19 data/amberdreams/recipe/tool_bench.json
 b96c960c32b0021cfe98bfa689ce7e4487312d67 data/amberdreams/recipe/white_crayon.json
 c42858b05cec598b496a813e69bf26dd50d2499a data/amberdreams/recipe/yellow_crayon.json
 f72678d774f13bd4d342556ec0146f0501bcdb44 data/minecraft/advancement/recipes/misc/tempered_gold_from_block.json

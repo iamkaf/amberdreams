@@ -9,7 +9,6 @@ import com.iamkaf.amberdreams.item.*;
 import com.iamkaf.amberdreams.loot.LootModifications;
 import com.iamkaf.amberdreams.registry.CreativeTabRegistryHolder;
 import com.iamkaf.amberdreams.tags.Tags;
-import com.iamkaf.amberdreams.tool_upgrades.ItemLevelDataComponent;
 import com.iamkaf.amberdreams.util.SimpleIntegerDataComponent;
 import com.mojang.logging.LogUtils;
 import net.minecraft.ChatFormatting;
@@ -63,13 +62,6 @@ public final class AmberDreams {
 
         // Events
         OnHammerUsage.init();
-        OnBlockBreak.init();
-        OnEntityHurt.init();
-        OnClickOnRepairBench.init();
-        OnClickOnToolBench.init();
-        OnCraftItem.init();
-//        OnPlayerJoin.init();
-//        OnRespawn.init();
         OnBrittleyBlockCollapse.init();
         OnBottleUsedOnLavaCauldron.init();
         OnNetherGoldMined.init();
@@ -397,8 +389,7 @@ public final class AmberDreams {
                     @Override
                     public InteractionResultHolder<ItemStack> use(Level level, Player player,
                             InteractionHand usedHand) {
-                        level.playSound(
-                                null,
+                        level.playSound(null,
                                 player.blockPosition(),
                                 Sounds.POOP.value(),
                                 SoundSource.PLAYERS,
@@ -423,8 +414,7 @@ public final class AmberDreams {
                         .alwaysEdible()
                         .build()))
         ));
-        public static final Supplier<Item> GRAY_CRAYON = CreativeModeTabs.TAB.add(Register.item(
-                "gray_crayon",
+        public static final Supplier<Item> GRAY_CRAYON = CreativeModeTabs.TAB.add(Register.item("gray_crayon",
                 () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
                         .nutrition(1)
                         .alwaysEdible()
@@ -444,8 +434,7 @@ public final class AmberDreams {
                         .alwaysEdible()
                         .build()))
         ));
-        public static final Supplier<Item> RED_CRAYON = CreativeModeTabs.TAB.add(Register.item(
-                "red_crayon",
+        public static final Supplier<Item> RED_CRAYON = CreativeModeTabs.TAB.add(Register.item("red_crayon",
                 () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
                         .nutrition(1)
                         .alwaysEdible()
@@ -465,8 +454,7 @@ public final class AmberDreams {
                         .alwaysEdible()
                         .build()))
         ));
-        public static final Supplier<Item> LIME_CRAYON = CreativeModeTabs.TAB.add(Register.item(
-                "lime_crayon",
+        public static final Supplier<Item> LIME_CRAYON = CreativeModeTabs.TAB.add(Register.item("lime_crayon",
                 () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
                         .nutrition(1)
                         .alwaysEdible()
@@ -479,8 +467,7 @@ public final class AmberDreams {
                         .alwaysEdible()
                         .build()))
         ));
-        public static final Supplier<Item> CYAN_CRAYON = CreativeModeTabs.TAB.add(Register.item(
-                "cyan_crayon",
+        public static final Supplier<Item> CYAN_CRAYON = CreativeModeTabs.TAB.add(Register.item("cyan_crayon",
                 () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
                         .nutrition(1)
                         .alwaysEdible()
@@ -493,8 +480,7 @@ public final class AmberDreams {
                         .alwaysEdible()
                         .build()))
         ));
-        public static final Supplier<Item> BLUE_CRAYON = CreativeModeTabs.TAB.add(Register.item(
-                "blue_crayon",
+        public static final Supplier<Item> BLUE_CRAYON = CreativeModeTabs.TAB.add(Register.item("blue_crayon",
                 () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
                         .nutrition(1)
                         .alwaysEdible()
@@ -514,8 +500,7 @@ public final class AmberDreams {
                         .alwaysEdible()
                         .build()))
         ));
-        public static final Supplier<Item> PINK_CRAYON = CreativeModeTabs.TAB.add(Register.item(
-                "pink_crayon",
+        public static final Supplier<Item> PINK_CRAYON = CreativeModeTabs.TAB.add(Register.item("pink_crayon",
                 () -> new Item(new Item.Properties().food(new FoodProperties.Builder().saturationModifier(0.2f)
                         .nutrition(1)
                         .alwaysEdible()
@@ -525,7 +510,8 @@ public final class AmberDreams {
         static void init() {
             Register.fuelItem(FROSTFIRE_ICE, 800);
             Register.fuelItem(STARLIGHT_ASHES, 1200);
-//            DispenserBlock.registerProjectileBehavior(FLIPFLOP.get());
+            DispenserBlock.registerProjectileBehavior(FLIPFLOP.get());
+            DispenserBlock.registerProjectileBehavior(POOP.get());
         }
     }
 
@@ -621,37 +607,6 @@ public final class AmberDreams {
                         .lightLevel(BismuthLampBlock::getLightLevel))
         ));
 
-        public static final Supplier<Block> TOOL_BENCH = CreativeModeTabs.TAB.add(Register.block("tool_bench",
-                () -> new Block(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRAFTING_TABLE)
-                        .noOcclusion()) {
-                    @Override
-                    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
-                            Player player, BlockHitResult hitResult) {
-                        if (level.isClientSide) {
-                            return InteractionResult.SUCCESS;
-                        } else {
-                            return InteractionResult.CONSUME;
-                        }
-                    }
-                }
-        ));
-        public static final Supplier<Block> REPAIR_BENCH = CreativeModeTabs.TAB.add(Register.block(
-                "repair_bench",
-                () -> new Block(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.COBBLESTONE)
-                        .noOcclusion()) {
-                    // FIXME: this is ugly, make a custom class for the block
-                    @Override
-                    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
-                            Player player, BlockHitResult hitResult) {
-                        if (level.isClientSide) {
-                            return InteractionResult.SUCCESS;
-                        } else {
-                            return InteractionResult.CONSUME;
-                        }
-                    }
-                }
-        ));
-
         public static final Supplier<Block> BRITTLEY_BLOCK = CreativeModeTabs.TAB.add(Register.block(
                 "brittley_block",
                 () -> new Block(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.FLOWER_POT)
@@ -697,10 +652,7 @@ public final class AmberDreams {
     public static class DataComponents {
         public static final Supplier<DataComponentType<BlockPos>> COORDINATES =
                 Register.dataComponentType("coordinates", builder -> builder.persistent(BlockPos.CODEC));
-        public static final Supplier<DataComponentType<ItemLevelDataComponent>> ITEM_EXPERIENCE =
-                Register.dataComponentType("item_level",
-                        builder -> builder.persistent(ItemLevelDataComponent.CODEC)
-                );
+
         public static final Supplier<DataComponentType<SimpleIntegerDataComponent>>
                 INERT_RECALL_POTION_CHARGE = Register.dataComponentType("inert_recall_potion_charge",
                 builder -> builder.persistent(SimpleIntegerDataComponent.CODEC)

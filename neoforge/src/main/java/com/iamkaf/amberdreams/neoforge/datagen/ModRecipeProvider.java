@@ -154,23 +154,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_bismuth", has(AmberDreams.Items.BISMUTH.get()))
                 .save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, AmberDreams.Blocks.TOOL_BENCH.get())
-                .pattern("AAA")
-                .pattern("A A")
-                .pattern("B B")
-                .define('A', ItemTags.PLANKS)
-                .define('B', ItemTags.LOGS)
-                .unlockedBy("has_planks", has(ItemTags.PLANKS))
-                .save(recipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, AmberDreams.Blocks.REPAIR_BENCH.get())
-                .pattern("AAA")
-                .pattern("A A")
-                .pattern("B B")
-                .define('A', Items.COBBLESTONE)
-                .define('B', Items.STONE_BRICKS)
-                .unlockedBy("has_cobby", has(Items.COBBLESTONE))
-                .save(recipeOutput);
-
         simpleFullArmorSetRecipe("tempered_gold",
                 AmberDreams.Items.TEMPERED_GOLD_INGOT.get(),
                 AmberDreams.Items.TEMPERED_GOLD_HELMET.get(),

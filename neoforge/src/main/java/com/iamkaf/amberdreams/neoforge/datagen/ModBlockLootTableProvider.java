@@ -43,8 +43,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(AmberDreams.Blocks.BISMUTH_ORE.get(), block -> createOreDrop(AmberDreams.Blocks.BISMUTH_ORE.get(), AmberDreams.Items.RAW_BISMUTH.get()));
         add(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get(), block -> createMultipleOreDrops(AmberDreams.Blocks.BISMUTH_DEEPSLATE_ORE.get(), AmberDreams.Items.RAW_BISMUTH.get(), 2, 5));
 
-        dropSelf(AmberDreams.Blocks.TOOL_BENCH.get());
-        dropSelf(AmberDreams.Blocks.REPAIR_BENCH.get());
         dropOther(AmberDreams.Blocks.BRITTLEY_BLOCK.get(), Items.SUGAR);
 
         dropSelf(AmberDreams.Blocks.TEMPERED_GOLD_BLOCK.get());

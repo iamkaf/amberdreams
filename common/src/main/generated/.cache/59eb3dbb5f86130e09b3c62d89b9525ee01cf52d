@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-21T02:53:41.3059765	Loot Tables
+// 1.21.1	2024-11-29T07:34:09.8025947	Loot Tables
 8533e9b2c310672dd9607dd3d7584d9888e7677a data/amberdreams/loot_table/blocks/bismuth_block.json
 16156a825c7ae9ce126168a4e36e268d0e64e23d data/amberdreams/loot_table/blocks/bismuth_button.json
 259e3a18687411888f07a9a347e7a166a40097a5 data/amberdreams/loot_table/blocks/bismuth_deepslate_ore.json
@@ -13,6 +13,4 @@ dc1928cd183a1feae71e85b114c7778be9e9c59e data/amberdreams/loot_table/blocks/bism
 de116b945a1dd5f3abf63d8fcde3120e57cb926d data/amberdreams/loot_table/blocks/bismuth_trapdoor.json
 5c21f95437668bbb7356ac41178a713aa4b89064 data/amberdreams/loot_table/blocks/bismuth_wall.json
 70318285f37e169671d69c94f84d1262f00e4fea data/amberdreams/loot_table/blocks/brittley_block.json
-4ad60a539b8820be2c5c4cf26b8d800a7c7bc1f5 data/amberdreams/loot_table/blocks/repair_bench.json
 6841a020a8a7b41ff5a239991a6e37c232f61eb5 data/amberdreams/loot_table/blocks/tempered_gold_block.json
-b4d1122000ef585c47b36eb0dd2b3add18c218e7 data/amberdreams/loot_table/blocks/tool_bench.json
